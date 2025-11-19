@@ -1,0 +1,1094 @@
+#discover {
+  width: 90%;
+  margin-top: 20px;
+} 
+#discover #searchBar {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 65px;
+}
+.discoverSearch {
+  color: white;
+  font-size: 17px;
+  background-color: #0000000c;
+  backdrop-filter: blur(15px);
+  border: none;
+  font-family: Outfit;
+  width: 220px;
+  border-radius: 13px;
+  padding-left: 65px;
+  height: 60px;
+  
+}
+.discoverSearch:focus , .librarySearch:focus {
+ outline: none;
+ color: white;
+ font-family: Outfit;
+ font-weight: 400;
+
+}
+.discoverSearch::placeholder {
+  color: white;
+  opacity: 0.7;
+  font-family: Outfit;
+  font-weight: 300;
+  font-size: 18px;
+}
+#discover .click {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  width: 18.5px;
+ transform: translateX(28px);
+}
+.searchResults {
+  display: none;
+  transform: translateY(0px);
+  opacity: 0;
+  transition: all 0.8s ease-in;
+}
+.resultsSummary {
+  margin-top: 5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.return {
+  margin: 0;
+ transform: translateY(15px);
+  font-weight: 400;
+  font-size: 12.5px;
+}
+.resultsList {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap:20px;
+  row-gap: 50px;
+}
+/* add or replace the existing #discoverMain rule */
+#discoverMain {
+  margin-top: 28px;
+  width: 100%;
+  color: white;
+  padding: 35px 50px;
+  padding-left: 20px;
+  backdrop-filter: blur(20px);
+  /* IMPORTANT: keep these */
+  background: rgba(0, 0, 0, 0.04); /* use rgba so it's explicitly semi-transparent */
+  border-radius: 20px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.052);
+
+  /* make stacking context explicit and stable */
+  position: relative;
+  z-index: 0; /* keep it at the base of its stacking context */
+
+}
+
+.books , .articles{
+
+  transition: opacity 1s ease;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/**Books**/
+
+.exploreBooksTop{
+  margin-top: 0px;
+}
+.exploreBooksTop h3 {
+  font-size: 21.5px;
+  margin:0;
+  margin-top: 0px;
+  margin-bottom: 17px;
+}
+#seeAll {
+  margin-top: 7px;
+  margin-bottom: 5px;
+  font-size: 12.8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.booksPreview {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: hidden;
+  gap: 33px;
+  width: 108%;
+  transition: all 0.5s ease;
+}
+.allBooksSection {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.info {
+  display: none;
+  font-weight: 200;
+  margin-top: 0;
+  margin-bottom: 8px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+#genres {
+  display: grid;
+  transform: translateX(-5px);
+ grid-template-columns: repeat(4, 1fr);
+ column-gap: 8px;
+ align-items: center;
+ width: 103%;
+ margin-top: 7px;
+ margin-bottom: 10px;
+}
+#genres p{
+  width: 50px;
+  font-size: 14px;
+  padding:10px 15px 13px;
+  height: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  transition: all 1s ease;
+}
+#shownGenre {
+  background-color: rgba(0, 0, 0, 0.064);
+  border-radius: 9px;
+  transition: all 1s ease;
+}
+.allBooks {
+  width: 100%;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 32px;
+  row-gap: 50px;
+  transition: all 0.5s ease
+}
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width:145px;
+
+}
+.bookInfo {
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.bookTitle {
+  font-size: 17px;
+  margin: 0;
+  
+}
+.general {
+  width: 80%;
+}
+.bookAuthor {
+  font-size: 11.8px;
+  margin-top: 5px;
+  margin-bottom: 14px;
+  opacity: 0.8;
+  font-weight: 200;
+}
+.bookCover {
+  height: 180px;
+  width: 135px;
+  border-radius: 12px;
+}
+.addToWishlist {
+  cursor: pointer;
+  padding-top: 7px;
+  height: 20px;
+  width: 20px;
+}
+.bookActions {
+  display: flex;
+  justify-content:space-between;
+  gap: 11px;
+}
+.bookActions p {
+  cursor: pointer;
+  margin: 0;
+  font-weight: 600;
+  font-size: 14.5px;
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+.bookActions p{
+  font-size: 13.5px;
+  padding: 12px 16px;
+}
+.readBook {
+  border-radius: 12px;
+  padding: 10px 15px;
+  padding-right: 17px;
+  color: black;
+  background-color: #ffffff;
+}
+
+.aboutBook {
+  background-color: #ffffff10;
+}
+.aboutBookSection{
+  position: fixed;
+  padding: 30px;
+  padding-top: 45px;
+  top: 0;
+  color: white;
+  text-align: center;
+  background-color: #00000013;
+  backdrop-filter: blur(40px);
+  transition: opacity 1.5s ease;
+}
+.aboutBookSection .top {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 12px;
+} 
+.aboutBookSection hr {
+  width: 90%;
+  margin: 14px 0px;
+  opacity: 0.1;
+}
+.aboutBookSection h3 {
+  margin-top: 0px;
+  font-size: 23.5px;
+}
+.closeAbout {
+  margin-top: 0px;
+  font-weight: 300;
+  font-size: 20px;
+  opacity: 0.6;
+}
+.aboutBookCover {
+  height: 188px;
+  width: 130px;
+  border-radius: 8px;
+}
+.aboutBookDetails h2{
+  font-size: 22.5px;
+  font-weight: 500;
+  margin: 0;
+  margin-top:11px;
+  margin-bottom: 8px;
+}
+.aboutBookDetails h4{
+  font-size: 16.4px;
+  font-weight: 400;
+  margin: 0px;
+  margin-top: 3px;
+  opacity: 0.6;
+}
+.aboutBookDetails .bookActions p {
+  font-size: 10px;
+}
+
+.pagesAmount {
+  font-size: 17px;
+  margin: 10px 0px;
+}
+.aboutBookDesc {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 200;
+  opacity: 0.6;
+}
+/**Reads Section**/
+
+.readsTopSection {
+  
+  border-radius: 15px;
+  margin-top: 15px;
+  
+  transition: all 1s ease;
+}
+
+.readsTopSection h3 {
+  font-size: 24px;
+  margin: 0;
+}
+#reloadBtn{
+  background-color: #ffffff;
+  border: none;
+  height: 38px;
+  font-family: Outfit;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 10px 15px;
+}
+.readsForYou {
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+  transition: opacity 1s ease;
+}
+#topics{
+  display: grid;
+  width: 115%;
+  height: 120px;
+  grid-template-columns: repeat(3, 1fr);
+}
+#topics p {
+  width: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  transition: all 0.7s ease;
+}
+#topics p#chosen  {
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.074);
+  padding: 5px 10px;
+  border-radius: 9px;
+  transform: translateY(-5px);
+}
+#discover hr {
+  width: 100%;
+  opacity: 20%;
+}
+
+/**Article**/
+
+.article {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.articleTop {
+  display: flex;
+  gap: 15px;
+}
+.articleTop p {
+  font-size: 15px;
+  font-weight: 200;
+}
+.articleTop span {
+  transform: translateY(13px);
+  font-weight: 100;
+  opacity: 0.91;
+}
+.articleMain {
+  position: relative;
+  z-index: 1;
+}
+.articleCover {
+  position: absolute;
+  right: 50px;
+  opacity: 0.8;
+  height: 70px;
+  width: 120px;
+  margin-top: 50px;
+  border-radius: 15px;
+}
+.articleTitle {
+  margin-top: 0px;
+  margin-bottom: 8px;
+  font-size: 20.5px;
+}
+.articleDescription {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 200;
+  opacity: 0.7;
+  width: 93%;
+}
+.articleActions {
+  display: flex;
+  gap: 10px;
+}
+.articleActions div {
+  display: flex;
+  padding: 13px 15px;
+  padding-right: 20px;
+  font-weight: 500;
+  gap: 9px;
+}
+.readArticle {
+  display: flex;
+  padding: 10px 15px;
+  padding-right: 20px;
+  font-weight: 500;
+  gap: 9px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+.articleActions svg, #discover .readArticle svg {
+  height: 20px;
+  stroke: none;
+}
+
+.articleActions p {
+  margin: 0;
+}
+.articleActions a{
+  text-decoration: none;
+  color: black;
+}
+.articleActions img {
+  width: 20px;
+  border-radius: 5px;
+  margin: 0;
+}
+.readArticle svg {
+  fill: black;
+}
+
+.articleReader {
+  position: relative;
+  z-index: -10;
+  width: inherit;
+  height: max-content;
+  opacity: 0;
+  transition: opacity 1s ease;
+  color: white;
+  padding: 40px;
+  padding-left: 22px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.052);
+  background: #00000011;
+  backdrop-filter: blur(30px);
+}
+#markArticleRead {
+  border: none;
+  font-size: 17.5px;
+  font-family: outfit;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+#articleRead {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: 500;
+  text-align: center;
+  font-family: outfit;
+  background-color: rgb(107, 190, 97);
+  color: white;
+  border-radius: 10px;
+  padding: 18px 21.5px;
+  transform: translateY(-10px);
+}
+.articleReader h2{
+  width: 100%;
+  font-size: 33px;
+  margin-top: 28px;
+  margin-bottom: 0px;
+}
+.articleReader h3 {
+  font-size: 17.5px;
+}
+.articleReader h4{
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 10px;
+}
+.articleReader  {
+  display: none;
+  opacity: 0;
+  font-weight: 200;
+  font-size: 17px;
+  transition: all 0.5s ease-in;
+}
+.articleReader hr{
+  margin: 25px 0px;
+}
+.articleReader a{
+  color: white;
+}
+figure {
+  margin: 20px 0px 37px;
+}
+.articleReader img {
+  width: 60%;
+  margin: 12px 0px 20px;
+}
+.intro {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.intro-div {
+  display: flex;
+  justify-content: space-between;
+}
+.saveArticle svg {
+  opacity: 0.9;
+  width: 21px;
+}
+.intro h3 {
+  font-weight: 300;
+}
+.intro p , .intro h3 {
+  margin: 0;
+}
+.intro p {
+  opacity: 0.9;
+  margin-top: 2px;
+}
+#closeArticle , .saveArticle{
+  cursor: pointer;
+}
+#closeArticle {
+  width: 22px;
+  transform: translateX(50px);
+}
+
+@media (min-width:1900px) {
+  #discover {
+    width: 96%;
+  }
+  .main-display {
+    gap: 70px;
+  }
+  .discoverSearch {
+    font-size: 26px;
+    height: 87px;
+    padding-left: 71px;
+    width: 65%;
+  }
+  #discover .click {
+    width: 24.5px;
+  }
+  .discoverSearch::placeholder {
+    font-size: 26px;
+  }
+  #discoverMain {
+    width: 89%;
+    padding: 53px;
+    padding-top: 35px;
+  }
+  .exploreBooksTop h3 {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  #seeAll {
+    font-size: 18px;
+  }
+  .readsTopSection h3 {
+    margin-top: 25px;
+    font-size: 38px;
+  }
+  .book {
+    width: 220px;
+  }
+  .bookTitle {
+    font-size: 26px;
+  }
+  .bookAuthor {
+    font-size: 16px;
+    width: 120%;
+  }
+  .addToWishlist {
+    height: 26px;
+    width: 26px;
+  }
+  .bookCover {
+    height: 285px;
+    width: 215px;
+  }
+  .bookActions p {
+    font-size: 19.5px;
+    padding: 15px 22px;
+  }
+  .articleActions div {
+    padding: 15px 22px;
+    font-size: 20px;
+  }
+  .articleActions svg {
+    height: 24px;
+  }
+  #genres {
+    width: 102%;
+    margin-bottom: 22px;
+  }
+  #topics p, #genres p {
+    font-size: 22.5px;
+  }
+  #topics p#chosen, #genres p#shownGenre {
+    padding: 5px 15px;
+  }
+  #genres p#shownGenre {
+    padding: 14px 20px 25px;
+  }
+  .allBooks{
+    transform: translateX(20px);
+  }
+  .readsForYou {
+    gap: 50px;
+  }
+  .articleTitle {
+    font-size: 33px;
+    width: 90%;
+  }
+  .articleTop span {
+    transform: translateY(22px);
+  }
+  .articleTop p {
+
+    font-size: 20.5px;
+  }
+  .articleDescription {
+    width: 90%;
+    font-size: 19.5px;
+    margin-top: 15px;
+  }
+  #discover .articleCover {
+    height: 200px;
+    width: 280px;
+  }
+  .articleActions {
+    margin-top: 28px;
+  }
+  .articleReader {
+    font-size: 27px;
+  }
+  .articleReader h2 {
+    font-size:  48px;
+    margin-top: 40px;
+  }
+  .articleReader h3 {
+    font-size: 40px;
+  }
+  .articleReader h4, .articleReader p {
+    font-size:33px;
+  }
+  figcaption {
+    font-size: 25px;
+  }
+  #markArticleRead {
+    font-size: 26.5px;
+    padding: 25px;
+  }
+  #closeArticle {
+    width: 42px;
+  }
+}
+@media (min-width: 1600px) and (max-width: 1899px){
+
+  #discover {
+    width: 96%;
+  }
+  .main-display {
+    gap: 70px;
+  }
+  .discoverSearch {
+    font-size: 22px;
+    height: 75px;
+    width: 65%;
+  }
+  #discover .click {
+    width: 21.5px;
+  }
+  .discoverSearch::placeholder {
+    font-size: 22px;
+  }
+  #discoverMain {
+    width: 90%;
+    padding: 53px;
+    padding-top: 35px;
+  }
+  .exploreBooksTop h3 {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+  #seeAll {
+    font-size: 16px;
+  }
+  .readsTopSection h3 {
+    font-size: 33px;
+  }
+  .book {
+    width: 190px;
+  }
+  .bookTitle {
+    font-size: 23px;
+  }
+  .bookAuthor {
+    font-size: 16px;
+    width: 120%;
+  }
+  .addToWishlist {
+    height: 21.5px;
+    width: 21.5px;
+  }
+  .bookCover {
+    height: 255px;
+    width: 185px;
+  }
+  .bookActions p {
+    font-size: 17.5px;
+    padding: 14px 20px;
+  }
+  .articleActions div {
+    padding: 15px 22px;
+    font-size: 20px;
+  }
+  .articleActions svg {
+    height: 24px;
+  }
+  #topics p {
+    font-size: 20.5px;
+  }
+  #topics p#chosen {
+    padding: 5px 15px;
+  }
+
+  .allBooks{
+    transform: translateX(20px);
+  }
+  .readsForYou {
+    gap: 50px;
+  }
+  .articleTitle {
+    font-size: 30px;
+    width: 90%;
+  }
+  .articleTop p {
+    font-size: 17.5px;
+  }
+  .articleDescription {
+    width: 90%;
+    font-size: 19.5px;
+    margin-top: 15px;
+  }
+  #discover .articleCover {
+    height: 200px;
+    width: 280px;
+  }
+  .articleActions {
+    margin-top: 28px;
+  }
+  .articleReader h2 {
+    font-size:  42px;
+  }
+  .articleReader h3 {
+    font-size: 30px;
+  }
+  .articleReader h4, .articleReader p {
+    font-size: 25px;
+  }
+  #markArticleRead {
+    font-size: 21.5px;
+    padding: 22px;
+  }
+  #closeArticle {
+    width: 28px;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599px){
+  #discover {
+    width: 95%;
+  }
+  .main-display {
+    gap: 70px;
+  }
+  .discoverSearch {
+    font-size: 21px;
+    height: 70px;
+    width: 63%;
+  }
+  #discover .click {
+    width: 20px;
+  }
+  .discoverSearch::placeholder {
+    font-size: 21px;
+  }
+#discoverMain {
+  width: 92%;
+  padding: 53px;
+  padding-top: 40px;
+}
+.exploreBooksTop h3 {
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+#seeAll {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.readsTopSection h3 {
+  font-size: 29px;
+}
+.book {
+  width: 175px;
+}
+.bookTitle {
+  font-size: 20px;
+}
+.addToWishlist {
+  height: 21.5px;
+  width: 21.5px;
+}
+.bookCover {
+  height: 240px;
+  width: 170px;
+}
+.bookActions p {
+  padding: 
+  12px 18px;
+}
+.articleActions div {
+  padding: 14px 19px;
+}
+#topics p {
+  font-size: 18px;
+}
+#topics p#chosen {
+  padding: 5px 15px;
+}
+.allBooks{
+  transform: translateX(20px);
+}
+.readsForYou {
+  gap: 50px;
+}
+.articleTitle {
+  font-size: 28px;
+}
+.articleActions {
+  margin-top: 28px;
+}
+.articleReader h2 {
+  font-size:  42px;
+}
+.articleReader h3 {
+  font-size: 30px;
+}
+.articleReader h4, .articleReader p {
+  font-size: 25px;
+}
+#markArticleRead {
+  font-size: 21.5px;
+  padding: 22px;
+}
+#closeArticle {
+  width: 28px;
+}
+  .articleCover {
+    height: 200px;
+    width: 280px;
+  }
+}
+@media (min-width:1250px) and (max-width: 1439px){
+  #closeArticle {
+    width: 25px;
+  }
+  .discoverSearch {
+    width: 58%;
+    height: 65px;
+  }
+  .exploreBooksTop h3 {
+    font-size: 26px;
+  }
+  .readsTopSection h3 {
+    font-size: 27px;
+  }
+  #seeAll {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .book {
+    width: 155px;
+  }
+  .bookCover {
+    height: 200px;
+    width: 144px;
+  }
+  .bookTitle{
+    font-size: 18px;
+  }
+  .bookAuthor {
+    font-size: 13px;
+  }
+  .addToWishlist {
+    width: 20px;
+    height: 20px;
+  }
+  .bookActions p {
+    font-size: 15.5px;
+  }
+  .articleTitle {
+    font-size: 26px;
+  }
+  .articleDescription {
+    font-size: 17px;
+    margin-bottom: 15px;
+    width: 72%;
+  }
+  .articleActions div {
+    padding: 10px 15px;
+  }
+  .articleReader {
+    font-size: 20px;
+  }
+  .articleReader h3 {
+    font-size: 1.2rem;
+  } 
+  .articleReader h4 {
+    font-size: 22px;
+  }
+  .aboutBookSection h3{
+    font-size: 1.2rem;
+  }
+  .aboutBookDetails h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 8px;
+  }
+  .aboutBookDetails h4{
+    font-size: 14.4px;
+    font-weight: 400;
+    margin: 0px;
+    margin-top: 3px;
+    opacity: 0.6;
+  }
+.aboutBookDetails .bookActions p {
+  font-size: 10px;
+  padding: 13px 18px;
+}
+
+.pagesAmount {
+  font-size: 15.5px;
+  margin: 10px 0px;
+}
+.aboutBookDesc {
+  text-align: left;
+  font-size: 15.4px;
+  font-weight: 200;
+  opacity: 0.6;
+}
+ .articleCover {
+    height: 150px;
+    width: 230px;
+  }
+}
+@media (min-width: 768px) {
+  #discover {
+  width: 85%;}
+  #discover #searchBar {
+    margin-left: 0;
+  }
+  #discoverMain {
+    padding: 50px 50px;
+    padding-left: 50px;
+  }
+  .booksPreview {
+    width: unset;
+    gap: 28px;
+  }
+  #topics{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #topics p {
+    width: unset;
+  }
+  #genres {
+    transform: translateX(5px);
+    display: flex;
+    justify-content: space-between;
+    column-gap: unset;
+  }
+  #genres p {
+    width: unset;
+    height: 20px;
+    font-size: unset;
+
+  }
+  .resultsList {
+
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+  }
+  .allBooks {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 52px;
+  }
+  .return {
+    transform: translateY(11px);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .articleReader {
+    padding-left: 40px;
+  }
+  #closeArticle {
+    transform: none;
+  }
+  .intro {
+    flex-direction: row;
+    align-items: center;
+    gap: 38px;
+  }
+  .intro-div {
+    display: block;
+  }
+  .articleReader h2 {
+    width: 88%;
+    margin-top: 18px;
+  }
+  .intro {
+    margin-top: 26px;
+  }
+  .aboutBookSection{
+    position: sticky;
+    height: unset;
+
+    flex-direction: column;
+    text-align: center;
+    
+    padding-top: 26px;
+  }
+  .about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    justify-content: space-between;
+  }
+  .aboutBookSection .top {
+    gap: 23px;
+  }
+  .aboutBookCover {
+    height: 160px;
+    width: 110px;
+  }
+  .aboutBookDesc {
+    margin-top: 30px;
+  }
+  .aboutBookSection .bookActions {
+    width: 100%;
+  }
+  .book {
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .bookActions {
+    gap: 0px;
+  }
+  .articles {
+    gap: 0px;
+  }
+  .article {
+    padding: 16px;
+    padding-bottom: 15px;
+  }
+}

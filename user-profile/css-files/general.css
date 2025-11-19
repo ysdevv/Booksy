@@ -1,0 +1,1141 @@
+/** General **/
+body, html {
+  position: relative;
+  height: 100%;
+  width: initial;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: Outfit;
+  background-color: rgb(95, 80, 82);
+}
+
+.background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: all 1.5s ease;
+}
+body {
+  display: flex;
+  filter:  brightness(0);
+  transition: all 1.5s ease;
+}
+.bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	filter: brightness(0.74) blur(10px) ;
+  height: 100%;
+}
+.logo {
+  position: absolute;
+  font-size: 43px;
+  top: 42%;
+  left: 31%;
+  color: white;
+  transition: all 0.5s ease-in;
+}
+.welcome-logo {
+  color: white;
+  position: absolute;
+  z-index: 2;
+  top: 34vh;
+  left: 145%;
+  font-size: 50px;
+  margin: 0;
+  font-weight: 600;
+  transition: all 1.3s ease;
+}
+input, button {
+  border: none;
+  font-family: outfit;
+}
+input:focus {
+  outline: none;
+}
+/**Nav&logo(left part of the page)**/
+.pre-nav {
+  display: flex;
+  justify-content: right;
+  gap: 8px;
+}
+.pre-nav svg {
+
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.open-nav {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 5px;
+  width: 23px;
+  height: 23px;
+  border-radius: 15px;
+  transform: translateY(3px);
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.081);
+  backdrop-filter: blur(10px);
+}
+.nav-bar {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  opacity: 0;
+  top: 0;
+
+  height: 100vh;
+  padding: 0;
+  padding-top: 0px;
+  padding-right: 18px;
+  padding-left: 15px;
+  background-color: #0000002b;
+  backdrop-filter: blur(32px);
+  transition: all 0.77s ease;
+}
+.navContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: opacity 0.5s ease;
+}
+.wholeNav  {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  transition: all 0.5s ease-in;
+}
+
+.navs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.8s ease;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.nav a{
+  position: relative;
+  display: flex;
+  font-size: 18.5px;
+  width: 132px;
+  border-radius: 22px;
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.028);
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.25);
+  padding: 103px 5px 18px 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.982);
+  transition: all 0.4s ease;
+}
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.35);
+  transition: all 0.8s ease;
+
+}
+#active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+.settings#active {
+  background-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.125);
+}
+.smallerNav {
+  background-color:  rgba(0, 0, 0, 0.016);
+}
+.nav a svg {
+  position: absolute;
+  top: 22px;
+  right: 18px;
+}
+.nav-bar img , .nav svg {
+  height: 23px;
+  opacity: 0.85;
+}
+
+.focusMode {
+  width: 22px;
+}
+.focusMode svg {
+  opacity: 1;
+}
+.icon-stroke {
+  stroke: white;
+}
+.fill {
+  fill: white;
+}
+.links {
+  transform: translateX(15px) translateY(30px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: all 1s ease ;
+  margin-top: 15px;
+}
+.links a{
+  color: white;
+  opacity: 0.4;
+  font-size: 17.4px;
+  text-decoration: none;
+  font-weight: 100;
+  transition: all 1s ease;
+}
+.links a:hover {
+  opacity: 1;
+  font-weight: 400;
+  transition: all 0.7s ease;
+}
+.mini-nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+  gap: 12px;
+  transition: all 1.5s ease;
+  justify-content: space-between;
+}
+.achievements {
+
+  stroke-width: 0.2;
+  width: 26px;
+}
+.mini-nav svg {
+
+  cursor: pointer;
+  background-color: #00000001;
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.2);
+
+  padding: 30px 33px;
+}
+.mini-nav div {
+  opacity: 0;
+  position: absolute;
+  bottom: 47px;
+  right: 123px;
+  transition: all 0.5s ease-in;
+}
+.mini-nav div svg {
+  background: none;
+  box-shadow: none;
+  width: 22px;
+  padding: 0;
+}
+.saved , .wishlist {
+  width: 21px;
+  border-radius: 20px;
+}
+.achievements {
+    border-radius: 20px;
+}
+.mini-nav svg:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.28);
+  transition: all 0.6s ease;
+  
+}
+.showStars svg:hover {
+  box-shadow:none;
+  background:none;
+}
+
+/**Main part of the page**/
+
+.main-display {
+  opacity: 0;
+  display: flex;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  gap: 55px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  transition: opacity 0.7s ease;
+}
+
+.content {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  transition: all 1s ease;
+}
+
+.section {
+  display: none;
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.aboutBookSection {
+  display: none;
+  opacity: 0;
+}
+
+/**Reader section**/
+
+.reader-container {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin:0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  padding-top: 15px;
+  background: white;
+  transition: opacity 0.7s ease;
+}
+.loading {
+  position: absolute;
+  font-size: 25px;
+  transition: opacity 0.5s ease;
+}
+.reader-container .top {
+  display: flex;
+  justify-content: space-between;
+  width: 92%;
+  align-items: center;
+}
+.reader-container .top h2 {
+  transform: translateX(35px);
+  opacity: 0.6;
+  font-size: 20px;
+  font-weight: 400;
+}
+.message  {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.message h2{
+  font-weight: 600;
+}
+.message p {
+  font-weight: 500;
+}
+.light {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+.dark {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+}
+.light , .dark {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  bottom: -6px;
+  right: 5px;
+  gap: 10px;
+  transition: opacity 0.5s ease;
+}
+#switchMode {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#switchMode svg{
+  transform: translateY(-1px);
+  fill: black;
+  width: 21px;
+  height: 24px;
+}
+#switchMode p {
+  margin: 0;
+  width: 100px;
+}
+.reader-nav {
+  position: absolute;
+  display: none ;
+  opacity: 0;
+  align-items: center;
+  width: 95%;
+  height: 66%;
+  transition: opacity 0.5s ease;
+}
+.reader-nav button {
+  border-radius: 20px;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#closeReader {
+  font-size: 30px;
+  background-color: rgba(128, 128, 128, 0.049);
+  border: none;
+  border-radius: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 8px 18px;
+}
+
+.reader {
+  opacity: 0;
+  font-size: 18px;
+  font-weight: 300;
+  display: flex;
+  color: black;
+  overflow: hidden;
+  
+  text-align: center;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease;
+  margin-bottom: 10px;
+  padding: 0px 18px;
+}
+#pageCounter{
+  margin-bottom: 48px;
+  opacity: 0.85;
+  font-weight: 400;
+}
+.edit {
+  transform:translateY(-5px); background-color: rgba(0, 0, 0, 0.016); padding: 19px; border-radius: 18px; box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.18); height:20px;
+}
+.smallerNav {
+  width: 25px;
+  height: 32px;
+  transform:translateY(-5px);  padding: 13px 17px; border-radius: 18px; box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.18);
+}
+#wishlist, #saved {
+  display: none;
+  opacity: 0;
+  color: white;
+  transition: all 0.5s ease-in;
+}
+#wishlist h3, #saved h2 {
+  font-size: 29px;
+  margin-top: 33px;
+  margin-left: 70px;
+}
+
+.wishlist-card img, .saved-card img {
+  width: 200px;
+}
+.saved-list, .wishlist-list {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.wishlist-list  {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+#saved .article {
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 17px;
+  padding: 22px 10px 10px;
+  padding-left: 16px;
+  backdrop-filter: blur(15px);
+}
+#saved .author {
+  font-size: 15px;
+  margin: 10px 0px 13px;
+  font-weight: 300;
+}
+#saved .articleCover {
+  margin-top: 0px;
+  width: 150px;
+  opacity: 0.5;
+  height: 100px;
+  border-radius: 8px;
+}
+#saved .readArticle p {
+  font-size: 15px;
+  
+}
+#saved .readArticle {
+  padding: 12px 15px;
+}
+#saved .articleTitle {
+  font-size: 21.5px;
+  margin-top: 0px;
+  margin-left: 0;
+}
+#saved .articleDescription {
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+#saved .article svg {
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  right: 7px;
+  width: 22px;
+  height: 22px;
+  stroke-width: 2px;
+  transform: translateY(-0.5px) translateX(2px);
+}
+#wishlist .book {
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  padding: 22px 10px 20px;
+  width: 152px;
+}
+#wishlist .bookActions p {
+  font-size: 15.5px;
+  padding: 13px 14px;
+}
+#wishlist .bookCover {
+  width: 145px;
+  height: 190px;
+}
+#wishlist .bookTitle {
+  font-size: 19.4px;
+}
+.removeFromWishlist {
+  width: 20px;
+  height: 30px;
+}
+#settings {
+  display: none;
+  opacity: 0;
+  color: white;
+  transition: all 0.5s ease-in;
+  background-color: rgba(0, 0, 0, 0.052);
+  padding: 30px 22px;
+  backdrop-filter: blur(17px);
+}
+.account-settings {
+  margin-top: 30px;
+}
+.account-settings .change {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 10px;
+}
+.account-settings input {
+  font-weight: 300;
+  font-size: 15px;
+  padding: 14px;
+  border-radius: 8px;
+  background:none;
+  border: 1.5px solid rgba(255, 255, 255, 0.455);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+.account-settings label {
+  font-size: 17px;
+}
+.account-settings input::placeholder {
+  color: rgba(255, 255, 255, 0.592);
+}
+.account-settings button {
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+#settings h2 {
+  margin-top: 0px;
+  margin-left: 55px;
+  font-size: 30px;
+}
+.account-settings h3 {
+  font-size: 21px;
+}
+.themeh3 {
+  font-size: 25px;
+}
+.theme-settings {
+  margin-top: 50px;
+}
+.theme-main h3 {
+  margin-top: 40px;
+  margin-bottom: 35px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.change-security div {
+  margin-top: 20px;
+}
+.theme-main h4 {
+  font-weight: 300;
+}
+#settings .themes {
+  transform: none;
+  column-gap: 30px;
+  row-gap: 40px;
+  grid-template-columns: repeat(2,1fr);
+}
+#settings .booksy-themes {
+  column-gap: 25px;
+  row-gap: 20px;
+  width: 50%;
+  grid-template-columns: repeat(2,1fr);
+}
+#settings .theme-option, #settings .focus-theme {
+    width: 144px;
+    height: 85px;
+    border-radius: 10px;
+}
+.booksy-themes img {
+  width: 190px;
+}
+#logOut {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 17px;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+@media screen and (min-width:1900px){
+  .main-display {
+    max-width: 1920px;
+  }
+
+  .nav-bar{
+    width: 570px;
+  }
+  .pre-nav {
+    margin-top: 10px;
+  }
+  
+  .edit {
+    padding: 27px;
+    height: 28px;
+    border-radius: 23px;
+    margin-right: 6px;
+  }
+  .smallerNav {
+    width: 35px;
+    height: 43px;
+    padding: 19px 24px;
+    border-radius: 23px;
+  }
+  .navs {
+    gap: 22px;
+  }
+  .nav {
+    gap: 15px;
+  }
+  
+  .nav a {
+    padding: 138px 13px 26px 23px;
+    font-size: 26.5px;
+    width: 192px;
+  }
+  .nav a svg {
+    height: 33px;
+    
+  }
+  .wholeNav {
+    margin-top: 14px;
+    gap: 12px;
+  }
+  
+  .mini-nav{
+    gap: 15px;
+    margin-top:15px;
+  }
+  .saved , .mini-nav .wishlist {
+    padding: 43px 52px;
+    border-radius: 30px;
+    width: 31px;
+  }
+  .achievements {
+    padding: 43px 50px;
+    border-radius: 30px;
+    width: 38px;
+  }
+  .mini-nav div {
+    bottom: 60%;
+    right: 37%;
+  }
+  .mini-nav div svg {
+    width: 33px;
+  }
+  .links {
+   margin-top: 45px;
+   
+  }
+  .links a{
+    font-size: 25px;
+  }
+
+  #settings h2 {
+    margin-top: 15px;
+    font-size: 43.5px;
+  }
+  .account-settings h3, .themeh3 {
+    font-size: 33px;
+  }
+  .account-settings label {
+    font-size: 28px;
+  }
+  .theme-main h3 {
+    font-size: 30px;
+  }
+  .account-settings input {
+    font-size: 21px;
+    padding: 18px;
+    margin-top: 10px;
+  }
+  .account-settings button {
+    font-size: 20px;
+    padding: 0px 20px;
+    transform: translateY(10px);
+    height: 65px;
+  }
+  .booksy-themes img {
+    width: 250px;
+    height: 140px;
+  }
+  #settings .themes{
+    column-gap: 65px;
+    row-gap: 50px;
+  }
+  #settings .theme-option {
+     width: 250px;
+     height: 140px;
+  }
+  #settings .booksy-themes {
+    column-gap: 60px;
+  }
+  .theme-main h4 {
+    font-size: 23.5px;
+  }
+  #logOut {
+    font-size: 23.5px;
+    margin-top: 72px;
+    margin-bottom: 40px;
+    padding: 20px 25px;
+  }
+}
+
+@media (min-width: 1535px) and (max-width:1899px){
+
+  .nav-bar{
+    width: 440px;
+  }
+  .wholeNav {
+    gap: 12px;
+  }
+  .pre-nav {
+    margin-top: 10px;
+    margin-bottom: 13px;
+  }
+  .edit {
+    padding: 22px;
+    height: 24px;
+  }
+  .smallerNav {
+    width: 30px;
+    height: 35px;
+    padding: 16px 19px;
+  }
+  .navs {
+    gap: 17px;
+  }
+  .nav {
+    gap: 15px;
+  }
+  
+  .nav a {
+    padding: 113px 0px 23px 20px;
+    font-size: 22.4px;
+    width: 165px;
+  }
+  .nav a svg {
+    height: 26px;
+  }
+  .current-book-card {
+    height: 25vh;
+    width: 46vh;
+  }
+  
+  .mini-nav{
+    gap: 15px;
+    margin-top:6px;
+  }
+  .saved , .mini-nav .wishlist {
+    padding: 36px 41px;
+    border-radius:30px;
+    width: 25px;
+  }
+  .achievements {
+    padding: 36px 41px;
+    border-radius: 30px;
+    width: 32px;
+  }
+  .mini-nav div {
+  bottom: 60%;
+    right: 37%;
+  }
+  .mini-nav div svg{
+    width: 26px;
+  }
+  .links {
+   margin-top: 38px;
+   
+  }
+  .links a{
+    font-size: 20px;
+  }
+  .reader {
+    width: 70%;
+    font-size: 20px;
+  }
+  #pageCounter {
+    font-size: 18px;
+  }
+  #settings h2 {
+    margin-top: 15px;
+    font-size: 34px;
+  }
+  .account-settings h3, .themeh3 {
+    font-size: 25px;
+  }
+  .account-settings label {
+    font-size: 23px;
+  }
+  .theme-main h3 {
+    font-size: 24px;
+  }
+  .account-settings input {
+    font-size: 18px;
+    padding: 18px;
+    margin-top: 10px;
+  }
+  .account-settings button {
+    font-size: 20px;
+    padding: 0px 20px;
+    transform: translateY(10px);
+    height: 65px;
+  }
+  .booksy-themes img {
+    width: 222px;
+    height: 130px;
+  }
+  #settings .themes{
+    column-gap: 65px;
+    row-gap: 50px;
+  }
+  #settings .theme-option {
+     width: 222px;
+     height: 130px;
+  }
+  #settings .booksy-themes {
+    column-gap: 60px;
+  }
+  .theme-main h4 {
+    font-size: 20.5px;
+  }
+  #logOut {
+    font-size: 23.5px;
+    margin-top: 72px;
+    margin-bottom: 40px;
+    padding: 20px 25px;
+  }
+  #wishlist h3, #saved h2 {
+    font-size: 29px;
+    margin-top: 28px;
+  }
+}
+
+@media (min-width:1336px) and (max-width: 1535px) {
+
+  .pre-nav {
+    margin-top: 8px;
+  }
+  .edit {
+    height: 25px;
+    padding: 22px;
+  }
+  .smallerNav {
+    width: 30px;
+    height: 38px;
+    padding: 15px 20px;
+  }
+  .nav-bar {
+    width: 460px;
+  }
+  .wholeNav {
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .navs {
+    gap: 22px;
+  }
+  .mini-nav {
+    margin-top: 8px;
+  }
+  .nav a {
+    padding: 120px 0px 20px 20px;
+    font-size: 20.7px;
+    width: 162px;
+  }
+  .nav a svg {
+    height: 25.5px;
+  }
+  .mini-nav div {
+    bottom: 60%;
+    right: 37%;
+  }
+  .mini-nav div svg {
+    width: 25.4px;
+  }
+  .saved,  .mini-nav .wishlist {
+    padding: 33px 38px;
+    width: 27px;
+  }
+  .achievements {
+    padding: 33px 38px;
+    width: 32px;
+  }
+  .links a {
+    font-size: 20px;
+  }
+  .toast-container {
+    margin: 0 39%;
+  }
+  .reader {
+    width: 78%;
+    font-size: 20px;
+  }
+  #switchMode p {
+    font-size: 18.5px;
+  }
+  #switchMode svg {
+    width: 26px;
+    height: 24px;
+    transform:  translateX(-5px);
+  }
+  
+  #pageCounter {
+    font-size: 17px;
+  }
+  .links {
+   margin-top: 34px;
+   
+  }
+  #wishlist h3, #saved h2 {
+    font-size: 29px;
+    margin-top: 28px;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1335px) {
+  .nav-bar {
+    width: 28%;
+    
+  }
+  .wholeNav {
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .navs {
+    gap: 13px;
+  }
+  .nav a {
+    padding: 98px 11px 18px 20px;
+    font-size: 17.4px;
+  }
+  .mini-nav svg {
+    padding: 27px 32px;
+  }
+  .nav a svg {
+    height: 20px;
+  }
+  .saved , .wishlist {
+    width: 21.5px;
+  }
+  .achievements {
+     width: 25px;
+  }
+  .mini-nav div {
+
+    right: 130px;
+  }
+  .mini-nav div svg {
+    width: 20px;
+  }
+  .links a{
+    font-size: 15.5px;
+  }
+  .reader {
+    font-size: 18.5px;
+    width: 81%;
+  }
+  #switchMode p {
+    font-size: 17px;
+  }
+  #pageCounter {
+    font-size: 16px;
+  }
+  .showStars{
+    right:26%;
+  }
+  .links {
+    margin-top: 20px;
+  }
+   #settings .theme-option, #settings .focus-theme {
+    width: 178px;
+    height: 110px;
+  }
+  #settings .booksy-themes {
+    column-gap: 40px;
+  }
+  #wishlist h3, #saved h2 {
+    font-size: 32px;
+    margin-top: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    width: 100%;
+  }
+
+  .nav-bar {
+    display: block;
+    position: sticky;
+    opacity: 1;
+    padding: 33px;
+    padding-top: 20px;
+    padding-right: 26px;
+    padding-left: 22px;
+  }
+  .navContent {
+    gap: 10px;
+  }
+  .open-nav {
+    display: none;
+  }
+  .smallerNav {
+    display: block;
+  }
+  .links {
+    margin-top: 0;
+  }
+  .logo {
+    display: none;
+  }
+  .navs {
+    opacity: 0;
+    margin-top: 100px;
+  }
+  .mini-nav {
+    opacity: 0;
+  }
+  .links {
+    opacity: 0;
+    transform: translateX(15px) translateY(80px);
+  }
+  .pre-nav svg {
+    opacity: 0;
+  }
+  .main-display {
+    opacity: 1;
+  }
+  .content {
+    width: 80%;
+    position: unset;
+    margin-top: 70px;
+    opacity: 0;
+  }
+  #settings {
+    padding: 30px 50px;
+  }
+  #settings h2 {
+    margin-left: 0;
+  }
+  .change-security {
+    display: flex;
+    justify-content: space-between;
+  }
+  .change-security div {
+    margin-top: 0;
+  }
+  #settings .booksy-themes {
+    grid-template-columns: repeat(3,1fr);
+  }
+  #settings .themes {
+    grid-template-columns: repeat(4,1fr);
+  }
+  .reader-container {
+    margin-left: 2%;
+    border-radius: 20px;
+    width: 96%;
+  }
+  .reader{
+    padding: 0;
+  }
+  #wishlist h3, #saved h2 {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+  .saved-list, .wishlist-list {
+    margin-left: 0px;
+  }
+  .saved-list {
+    margin-top: 35px;
+    
+  }
+  .wishlist-list {
+    
+    margin-top: 5px;
+    grid-template-columns: repeat(4,1fr);
+  }
+  #wishlist .bookCover {
+    width: 150px;
+    height: 195px;
+  }
+  #saved .article {
+    width: 85%; 
+    padding: 22px 10px 20px;
+    padding-left: 22px;
+  }
+  #saved .articleCover {
+    opacity: 0.55;
+    width: 250px;
+    height: 160px;
+  }
+  #saved .articleTitle {
+    font-size: 24.5px;
+    margin-bottom: 0px;
+    width: 80%;
+  }
+  #saved .author {
+    font-size: 17px;
+  }
+  #saved .articleDescription {
+    width: 70%;
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+  #saved .article svg {
+    right: 30px;
+  }
+}
+
+

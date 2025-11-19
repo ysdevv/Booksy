@@ -1,0 +1,781 @@
+#library {
+    color: white;
+    width: 98%;
+    border-radius: 14px;
+}
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin-top: 7px;
+    margin-left: 70px;
+}
+.librarySrch {
+    display: block;
+
+}
+.addOfflineSection h2 {
+    transform: translateX(-50px);
+}
+.libraryh2 {
+    font-size: 30px;
+    position: relative;
+    z-index: 0;
+}
+.addBook {
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+    transform: translateX(-20px);
+    height: 30px;
+    transition: opacity 0.5s ease-in;
+}
+.closeAddSection, .closeOfflineSection {
+    cursor: pointer;
+    height: 26.5px;
+    transition: opacity 0.5s ease-in;
+}
+.closeOfflineSection {
+    margin-top: 8px;
+    transform: translateX(-20px);
+}
+.showLibrary {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    opacity: 0;
+    width: 100%;
+    transition: opacity 0.5s ease-in;
+}
+.noLibrary {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+.library-nav {
+    display: flex;
+    gap: 30px;
+    font-weight: 200;
+}
+.library-nav p {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 8px;
+    transition: all 0.5s ease;
+}
+.library-nav p#set {
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.023);
+    box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.194);
+    padding: 5px 13px;
+    border-radius: 9px;
+    backdrop-filter: blur(17px);
+}
+.year-section {
+    padding-bottom: 20px;
+}
+.year-section h3 {
+    font-size: 23px;
+    font-weight: 700;
+}
+.books-shelf {
+    transform: translateX(-15px);
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+   
+}
+.book-entry {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    padding: 15px;
+    width: 95%;
+    transition: all 0.5s ease;
+    gap: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.6s ease-in;
+}
+ .bookResult:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.033);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.227);
+}
+.book-entry img {
+    height: 158px;
+    width: 110px;
+    border-radius: 5px;
+}
+.book-main{
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+.book-entry h4 {
+    margin: 0px;
+    margin-top: 8px;
+    width: 80%;
+    font-size: 22px;
+}
+.book-main p {
+    font-size: 15px;
+    font-weight: 200;
+    width: 80%;
+    margin: 0px;
+}
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0px;
+}
+
+.progress-bar {
+    transform: translateY(-3px);
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6a00, #ee0979); /* gradient fill */
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.open-menu {
+    position: relative;
+    z-index: 1;
+    width: 26px;
+    height: 26px;
+    transform: translateX(5px) translateY(3px);
+}
+.close-menu {
+    margin: 0;
+    cursor: pointer;
+    font-size: 17.8px;
+    font-weight: 800;
+}
+.book-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: rgba(0, 0, 0, 0.081);
+    box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(7px);
+    top: 8px;
+    right: 0;
+    z-index: 0;
+    padding: 18px 25px 25px;
+    width: 59%;
+    height:120px;
+    border-radius: 15px;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+}
+.editProgressSection {
+    display: flex;
+    flex-direction: column;
+    
+}
+.editProgressSection input {
+    width: 50px;
+}
+.menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+.menu-actions p {
+    font-size: 14.5px;
+    margin: 0;
+}
+.menu-actions div {
+    display: flex;
+    gap: 10px;
+}
+#library .change {
+    flex-direction: column;
+}
+#markAsFinished {
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+.book-menu div a {
+    margin: 0;
+}
+.book-menu div svg {
+    width: 22px;
+}
+.book-menu .wishlist, .book-menu .finish, .book-menu .editReadingProgress {
+    width: 19px;
+}
+.delete-book p{
+    color: red;
+    width: 100%;
+}
+
+#inProgress {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.addBookSection {
+    position: relative;
+    z-index: 2;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    padding: 30px 25px 38px;
+    height: 78vh;
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.051);
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.27);
+    border-radius: 14px;
+    backdrop-filter: blur(15px);
+}
+.addMain {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    transition: opacity 0.5s ease-in;
+}
+.addBookSection h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+.options div{
+    cursor: pointer;
+}
+.import svg {
+    z-index: 0;
+    align-self: center;
+    width: 85px;
+    opacity: 0.25;
+    position: absolute;
+    bottom: 112px;
+    
+}
+.offline svg {
+    z-index: 0;
+    width: 85px;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 125px;
+    align-self: center;
+}
+.addBookSection p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+}
+.import p {
+    transform: translateY(10px);
+}
+.addBookSection button {
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    border: none;
+    font-family: Outfit;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight:600;
+    padding: 18px;
+}
+.optionImport {
+    margin-top: 8px;
+}
+.offline, .import {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.offline p, .import p {
+    position: relative;
+    z-index: 1;
+}
+.addOfflineSection {
+    display: none;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: 15px;
+    opacity: 0;
+    gap: 30px;
+    transition: opacity 0.5s ease-in;
+}
+.addOfflineSection h2 {
+    margin-top: 5px;
+    transform: translateY(-38px) translateX(20px);
+}
+.addOfflineSection .closeAddSection {
+    position: absolute;
+    right: 28px;
+    top: 20px;
+}
+#searchBar {
+    gap: 5rem;
+}
+.librarySearch {
+    transform: translateX(-32px);
+    border: none;
+    padding: 18px 18px;
+    padding-left: 52px;
+    border-radius: 12px;
+    font-size: 17px;
+    width: 14rem;
+    font-family: Outfit;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.096);
+}
+.addOfflineSection .click {
+    transform: translateX(11px) translateY(17px);
+    width: 22px;
+    height: 22px;
+}
+.librarySearch::placeholder {
+    color: white;
+}
+.searchResult {
+    width: 70%;
+    align-self: center;
+    margin-top: 6px;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 28px;
+    transform: translateX(-8px);
+    row-gap: 20px;
+    text-align: center;
+    transition: all 0.5s ease-in;
+}
+.searchSum {
+
+    margin: 0;
+}
+.searchResult svg {
+
+    width: 150px;
+}
+
+.bookResult {
+    border-radius: 15px;
+}
+.searchResult .bookInfo {
+    flex-direction: column;
+}
+.searchResult .bookCover {
+    width: 130px;
+    height: 180px;
+}
+.searchResult .bookTitle {
+    font-size: 22px;
+}
+.searchResult .bookAuthor {
+    text-align: left;
+    font-size: 15px;
+}
+.userProgress, .totalPages {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.096);
+
+}
+.details {
+    display: flex;
+}
+.details input {
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: outfit;
+    width: 80px;
+    height: 28px;
+    padding:  5px 10px;
+    border-radius: 9px;
+}
+.details input::placeholder {
+    color: rgba(255, 255, 255, 0.637);
+}
+.details button {
+    font-size: 15px;
+    padding: 30px 15px;
+}
+
+.addImportedSection {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding: 0px 13px ;
+    opacity: 0;
+    position: relative;
+    height: 100%;
+    gap: 0px;
+    z-index: 2;
+    transition: opacity 0.5s ease-in;
+}
+.addImportedSection button {
+    font-size: 16px;
+    padding: 15px;
+}
+.addImportedSection h3 {
+    margin-top: 0px;
+    margin-bottom: 18px;
+    font-size: 25px;
+}
+.editProperties {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.editProperties label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.editProperties input {
+    font-family: outfit;
+    border: none;
+    border-radius: 7px;
+    padding: 15px;
+    width: 230px;
+}
+.editProperties div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.importCover {
+    position: relative;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.028);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    width: 160px;
+    height: 240px;
+}
+.importCover img {
+    height: 240px;
+    border-radius: 15px;
+}
+.importCover div {
+    position: absolute;
+    z-index: -1;
+    top: 35%;
+    left: 23%;
+}
+.importCover svg {
+    height: 35px;
+}
+.importCover p {
+    margin-top: 0;
+    font-size: 15px;
+}
+#importCover {
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    position: relative;
+    z-index: 1;
+    box-shadow: none;
+    background-color: transparent;
+    opacity: 0;
+}
+#cancelImport, .editProperties input {
+    background-color: rgba(255, 255, 255, 0.033);
+    color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.18);
+    transition: all 0.5s ease-in;
+}
+.editProperties input:focus{
+    outline: none;
+    background: transparent;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.22);
+}
+#library .change {
+    align-items: flex-start;
+}
+#library .change input, .saveProgressBtn {
+    font-family: outfit;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+#library .saveProgressBtn {
+    padding: 8px 10px;
+    background-color: white;
+}
+.empty-section p {
+    font-size: 18px;
+    margin-top: 25px;
+}
+@media screen and (min-width: 1900px) {
+    .searchBar {
+        margin-left: 18rem;
+    }
+    .librarySearch {
+        width: 17rem;
+    }
+    .book-entry {
+        width: 73%;
+        padding: 24px;
+    }
+    .libraryh2 {
+        margin-top: 43px;
+        font-size: 45px;
+    }
+    .year-section h3 {
+        font-size: 34px;
+    }
+    .addBook {
+        height: 40.2px;
+    }
+    .open-menu {
+        width: 28px;
+        height: 28px;
+    }
+    .library-nav p {
+        font-size: 25px;
+    }
+  
+    .book-main p {
+        font-size: 19px;
+    }
+    .progress-info {
+        font-size: 18px;
+    }
+    .book-entry img {
+        height: 200px;
+        width: 137px;
+    }
+    .book-entry h4 {
+        font-size: 33px;
+        margin-bottom: 0px;
+    }
+    .book-menu {
+        height: 172px;
+    }
+    .menu-actions {
+        margin-top: 7px;
+        gap: 20px;
+    }
+    .book-menu p{
+        font-size: 19px;
+    }
+    #library .close-menu {
+        font-size: 23px;
+    }
+}
+@media (min-width:1600px) and (max-width:1899px) {
+    
+    .searchBar {
+        margin-left: 18rem;
+    }
+    .librarySearch {
+        width: 17rem;
+    }
+    .book-entry {
+        width: 85%;
+        padding: 24px;
+    }
+    .book-entry h4 {
+        font-size: 28px;
+        margin-bottom: 0px;
+    }
+    .libraryh2 {
+        margin-top: 30px;
+        font-size: 37px;
+    }
+    .year-section h3 {
+        font-size: 30px;
+    }
+    .addBook {
+        height: 35.2px;
+    }
+    .library-nav p {
+        font-size: 22px;
+    }
+  
+    .book-main p {
+        font-size: 17px;
+    }
+    .progress-info {
+        font-size: 16px;
+    }
+    .book-entry img {
+        height: 160px;
+    }
+    .book-menu {
+        height: 132px;
+    }
+    .menu-actions {
+        gap: 12px;
+    }
+    .book-menu p{
+        font-size: 17px;
+    }
+    #library .close-menu {
+        font-size: 21px;
+    }
+}
+@media (min-width:1440px) and (max-width:1599px) {
+    
+    .book-entry {
+        width: 84%;
+    }
+    .book-entry h4 {
+        font-size: 28px;
+        margin-bottom: 0px;
+    }
+    .libraryh2 {
+        margin-top: 30px;
+        font-size: 35px;
+    }
+    .year-section h3 {
+        font-size: 28px;
+    }
+    #library .close-menu {
+        font-size: 19px;
+    }
+    .addBook {
+        height: 33.2px;
+    }
+    .library-nav p {
+        font-size: 21px;
+    }
+  
+    .book-main p {
+        font-size: 17px;
+    }
+    .progress-info {
+        font-size: 16px;
+    }
+    .book-entry img {
+        height: 155px;
+    }
+    .menu-actions {
+        gap: 12px;
+    }
+    .book-menu p{
+        font-size: 15px;
+    }
+}
+@media (min-width:1440px){
+   
+    .librarySearch {
+        
+        width: 17rem;
+    }
+    .searchBar {
+        margin-left: 9rem;
+    }
+}
+@media (min-width:1250px) and (max-width:1439px) {
+   .library-nav p {
+    font-size: 17px;
+   }
+}
+@media (min-width: 768px) {
+    .showLibrary {
+        display:block;
+        align-items: baseline;
+    }
+   .library-header {
+     width: 100%;
+     margin-left: 0;
+     margin-top: 0;
+   }
+   .books-shelf {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .addBookSection {
+        height: 75vh;
+        padding-bottom: 27px;
+        width: unset ;
+   }
+   .options {
+        flex-direction: row;
+        transform: translateY(60px) translateX(30px);
+   }
+   .offline, .import {
+        width: 42%;
+   }
+   .offline svg, .import svg {
+    
+        align-self: unset;
+   }
+   .offline svg {
+        bottom: 125px;
+   }
+   .import svg {
+        bottom: 130px;
+        left: 0;
+   }
+   .librarySrch {
+       display: flex;
+       align-items: center;
+   }
+   .addOfflineSection h2, .closeOfflineSection, .librarySearch {
+        transform: none;
+   }
+   .addOfflineSection .click {
+        transform: translateX(42px) translateY(17px);
+   }
+   .searchResult {
+    margin-left: 0;
+    text-align: unset;
+    width: 150px;
+    margin-left: 10px;
+
+   }
+   .searchSum {
+        width: 150%;
+        transform: translateX(-70px);
+        margin: 0;
+    }
+    .searchResult svg {
+        transform: translateX(-28px);
+        width: 150px;
+    }
+    .searchResult {
+        transform: none;
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 10px;
+    }
+    .searchResult .bookCover {
+        width: 150px;
+        height: 200px;
+    }
+    .bookResult {
+        width: 150px;
+        padding: 20px;
+    }
+    .addImportedSection {
+        align-items: unset;
+        justify-content: center;
+        height: 100%;
+        gap: 30px;
+    }
+    .editProperties {
+        flex-direction: row;
+    }
+}

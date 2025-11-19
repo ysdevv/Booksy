@@ -1,0 +1,356 @@
+.achReward {
+    opacity: 0;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: white;
+    backdrop-filter: blur(22px);
+    border-radius: 15px;
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 90%;
+    height: 60%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    transition: all 0.5s ease-in;
+}
+.levelUpPopup {
+opacity: 0;
+display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 16%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: white;
+    backdrop-filter: blur(22px);
+    border-radius: 15px;
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 90%;
+    height: 55%;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s ease-in;
+}
+.levelUpPopup h2 {
+    font-size: 36px;
+}
+.levelUpPopup p, .levelUpPopup h3 {
+    font-size: 25px;
+}
+.achReward span {
+    font-size: 68px;
+    margin-bottom: 15px;
+}
+.achReward h2 {
+    font-size: 35px;
+    margin: 0;
+    
+}
+.achReward p {
+    font-weight: 300;
+    font-size: 20px;
+    margin-top: 22px;
+}
+.rewardText {
+    font-size: 18px;
+}
+.toast-container {
+    display: none;
+    width: 300px;
+    flex-direction: column;
+    position: fixed;
+    top: 20px;
+    left: 40%;
+    text-align: center;
+    gap: 10px;
+    z-index: 9999;
+}
+
+.toast {
+  backdrop-filter: blur(18px);
+  color: #fff;
+  padding: 50px;
+  border-radius: 8px;
+  font-size: 17px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.achievements {
+    position: relative;
+}
+
+.levelUpPopup.show {
+    opacity: 1;
+    display: flex;
+}
+
+#achievements {
+    margin-top: 30px;
+    display: none;
+    
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+}
+.achievements-section {
+    padding: 20px 18px;
+    padding-top: 10px;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+#achievements h2 {
+    font-size: 28px;
+    margin-top: 15px;
+    margin-left: 68px;
+    margin-bottom: 0px;
+}
+#achievements h3 {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.inf {
+    font-weight: 300;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.ach, .reward {
+    display: flex;
+}
+.ach, .milestone {
+    padding:17px 18px;
+    border-radius: 15px;
+    margin: 10px 0px;
+    background-color: rgba(0, 0, 0, 0.044);
+    align-items: center;
+    justify-content: space-between;
+}
+.ach {
+    padding: 17px 18px;
+}
+.milestone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    height: 188px;
+    padding:18px 18px;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.milestone-main {
+    transform: translateY(33px);
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.milestone svg {
+    position: absolute;
+    width: 100px;
+    opacity: 0.5;
+    top:25px;
+    z-index: 0;
+}
+.milestone-focus-5h svg, .milestone-focus-20h svg, .milestone-focus-50h svg, .milestone-focus-100h svg{
+    bottom: 70px;
+    top: unset;
+}
+
+.milestone .ach-status {
+    font-weight: 300;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+.milestone .ach-progress {
+    margin: 0;
+    margin-top:3px;
+    background: none;
+    font-size: 15px;
+    padding-bottom: 40px;
+}
+.reward {
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+.reward button {
+    cursor: pointer;
+    font-family: outfit;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+}
+.reward p {
+
+    opacity: 0.7;
+}
+
+.achievements-section p {
+    margin: 0;
+    margin-bottom: 0px;
+    opacity: 0.5;
+    font-size: 14px;
+}
+.achievements-section h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.earned-xp {
+    font-size: 18px;
+}
+.milestone .earned-xp {
+    font-size: 15.5px;
+}
+.ach-progress {
+    display: inline-block;
+    padding: 8px;
+    font-size: 13px;
+    background-color: rgba(107, 31, 113, 0.342);
+    border-radius: 12px;
+}
+
+.milestones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+}
+@media (min-width:1336px) and (max-width:1900px) {
+  .toast-container {
+    left: 0;
+    width: 350px;
+  }
+  .toast {
+    font-size: 20.5px;
+    padding: 55px 30px;
+  }
+  .ach-progress {
+        margin-top: 7px;
+    }
+    .achievements-section p {
+        margin-bottom: 0px;
+        font-size: 15px;
+    }
+}
+@media (min-width: 1600px)  {
+
+  #achievements h2 {
+    font-size: 36px;
+    margin-top: 40px;
+  }
+  #achievements h3 {
+    font-size: 30px;
+  }
+  .inf{
+    font-size: 21px;
+  }
+  .achievements-section h4 {
+    font-size: 25px;
+  }
+  .ach-progress {
+    font-size: 17px;
+  }
+  .earned-xp {
+    font-size: 22px;
+  }
+  .reward p {
+    font-size: 21px;
+  }
+  .milestone {
+    height: 248px;
+    width: 190px;
+  }
+  #achievements {
+        width: 97%;
+    }
+    .ach-progress {
+        margin-top: 7px;
+    }
+    .achievements-section p {
+        margin-bottom: 0px;
+        font-size: 15px;
+    }
+    .milestones {
+        grid-template-columns: repeat(4,1fr);
+    }
+    .ach, .milestone  {
+        padding: 27px 18px;
+    }
+}
+@media (min-width:768px) and (max-width:1599px) {
+    #achievements {
+        width: 97%;
+    }
+    #achievements h2 {
+        font-size: 33px;
+        margin-left: 0px;
+    }
+    #achievements h3 {
+        font-size: 25px;
+    }
+    .inf {
+        font-size: 18px;
+    }
+    .earned-xp {
+        font-size: 20px;
+    }
+    .reward p {
+        text-align: left;
+        font-size: 16px;
+    }
+    .achievements-section h4 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .ach, .milestone  {
+        padding: 27px 18px;
+    }
+    .ach-progress {
+        margin-top: 7px;
+    }
+    .achievements-section p {
+        opacity: 1;
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    .reward {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .milestones {
+        grid-template-columns: repeat(4,1fr);
+    }
+    .milestone .ach-progress {
+        padding-bottom: 8px;
+        margin-top: 10px;
+    }
+}
+@media (max-width:768px) {
+
+    .toast-container {
+        left: 30px;
+    }
+}

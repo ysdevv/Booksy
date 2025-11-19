@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booksy. Personalization.</title>
+  <link rel="stylesheet" href="/personalization/pers.css" />
+  <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Katibeh&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Parisienne&family=Raleway:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
+</head>
+<body>
+  <img class="black-bg" src="/images/black.png" alt="">
+  <img class="bg" src="/background-images/welcome-bg.jpg" alt="">
+   
+  <div id="welcome-screen" class="screen">
+      
+      <div id="welcome">
+        <h3>Booksy.</h3>
+        
+      </div>
+   </div>
+    <div id="countdown-screen" class="screen">
+        <h3 class="gradient first"  id="countdown-months" ></h3>
+        <h3 class="gradient" id="countdown-weeks" ></h3>
+        <h3 class="gradient last"  id="countdown-days" ></h3>
+        <span></span>
+    </div>
+    
+  <div class="motivator-cont">
+        <p class="motivator gradient">Make it count.</p>
+       
+        <p class="continue">click anywhere to get started</p>
+      </div>
+  <div id="questionnaire-screen" class="screen">
+      <div class="sections"><img width="82px" id="1" src="/images/section.png" alt=""><img width="82px" id="2" src="/images/section.png" alt=""><img id="3" width="82px" src="/images/section.png" alt=""><img id="4" width="82px" src="/images/section.png" alt=""></div>
+      <div class="questions-section">
+        <div class="section 1">
+          <p class="step">Step 1: Set your reading goals</p>
+          <h2>How many books would you like to read before the end of the year?</h2>
+          <p class="p">(Besides ones you've read so far)</p>
+          <div id="books-goal" class="question q1">
+          <div>
+            <p id="5">✨5 books</p>
+            <p id="10" class="selected">🧘🏻‍♀️10 books</p>
+          </div>
+            <div><p id="15">📚15 books</p>
+            <p id="20">🔥20 books</p></div>
+            <input placeholder="Enter a number" type="number" id="books-amount">
+          </div>
+          <div class="nav-buttons">
+            <button class="question-nav next">Next</button>
+          </div>
+
+        </div>
+        <div class="section 2 genres" style="gap: 0px; ">
+          <p class="step">Step 2: Reading preferences</p>
+          <h2>What genres are your favourite ones?</h2>
+          <p class="note">Select as many as you want</p>
+          <div class="div">
+              <div>
+                <div id="genres-pref" class="question q2">
+                <p id="classic">📖Classic</p>
+                <p id="psychology">💒Psychology</p>
+                <p id="horror" >😱Horror</p>
+                <p id="detective">🕵🏼‍♀️Detective</p>
+                <p id="fantasy">🧙🏻Fantasy</p>
+                <span class="toggle" style="padding-left: 22px; cursor: pointer;">See more...</span>
+                
+              </div>
+              <div class="q3">
+                <p id="selfHelp">🧘🏼‍♀️Self-help</p>
+                <p id="romance">🩷Romance</p>
+                <p id="philosophy">📜Philosophy</p>
+                <p id="history">⏳History</p>
+                <p id="other">📚Other</p>
+                <span class="toggle" style="cursor: pointer;">See less</span>
+              </div>
+              </div>
+              <div class="nav-buttons">
+                <button class="question-nav previous">Previous</button>
+                <button id="setTimeCommitment" class="question-nav next">Next</button>
+              </div>
+          </div>
+          
+         </div>
+        <div class="section 3" >
+          <p class="step" style=" width: 100%;">Step 3: Set your daily focus time</p>
+          <h2 style=" width: 100%; opacity: 0.88;">Choose a time to mute distractions and dive into a book.</h2>
+          <div class="section-main">
+              <div>
+                <div class="part1 focus-scheduler">
+                <div class="time-display">
+                  <div id="focus-start" class="time-box active"><span>06:30</span></div>
+                  <img  src="/images/arrow.png" alt="">
+                  <div id="focus-end" class="time-box"><span>--:--</span></div>
+                </div>
+                <div class="scroll-picker hidden">
+                  <div class="fade fade-top"></div>
+                  <div class="picker-columns">
+                    <ul id="hour-list" class="scroll-column"></ul>
+                    <ul id="minute-list" class="scroll-column"></ul>
+                  </div>
+                  <div class="fade fade-bottom"></div>
+                  <button id="confirm-time-picker" class="confirm-picker-btn hidden">Confirm</button>
+                </div>
+              </div>
+              <div class="part2">
+                <div id="time">
+                  <p class="chosen">15 min</p>
+                  <p>30 min</p>
+                  <p>1h</p>
+                  <p id="editEndTime">customize</p>
+                </div>
+                <div class="frequency">
+                  
+                    <div id="day-picker" > 
+                        <p id="sunday">S</p>
+                        <p id="monday">M</p>
+                        <p id="tuesday">T</p>
+                        <p id="wednesday">W</p>
+                        <p id="thursday">T</p>
+                        <p id="friday">F</p>
+                        <p id="saturday">S</p>
+                    </div>
+                    <p id="setEveryday">Set for everyday</p>
+                </div>
+                <div class="scroll-picker custom hidden" id="custom-duration-picker">
+                  <div class="fade fade-top"></div>
+                  <div class="picker-columns">
+                    <ul id="duration-hour-list" class="scroll-column"></ul>
+                    <ul id="duration-minute-list" class="scroll-column"></ul>
+                  </div>
+                  <div class="fade fade-bottom"></div>
+                  <button id="confirm-duration-picker" class="confirm-picker-btn hidden">Confirm</button>
+                </div>
+                
+              </div>
+              </div>
+              <div class="nav-buttons" >
+
+                  <button class="question-nav previous">Previous</button>
+                  <button id="setReminder" class="question-nav next">Next</button>
+                </div>
+          </div>
+        </div>
+        <div class="section 4">
+          <p class="step">Step 4: Your motivation</p>
+          <h2>What's your reason for reading more this year?</h2>
+          <div class="q4">
+            <p id="knowledge">🧠I want to grow intellectually</p>
+            <p id="phone-detox">✨I want to replace doom-scrolling</p>
+            <p id="self-care">🧘🏼‍♀️I want to prioritize my self-care</p>
+            <p id="habits-consistency">📈I want to build a new habit</p>
+            <p id="book-lover" >💛I just love books and want to read more</p>
+          </div>
+          <div class="nav-buttons">
+            <button class="question-nav previous">Previous</button>
+            <button id="submitQuestionnaire" class="question-nav next">Finish</button>
+          </div>
+      </div>
+        
+      </div>
+      <div class="all-set">
+        <h3>Booksy's now aligned with your preferences</h3>
+        <p>Your personalized reading journey starts now.</p>
+      </div>
+  </div>
+
+  <script type="module" src="/personalization/pers.js"></script>
+</body>
+</html>

@@ -1,0 +1,1262 @@
+/**DASHBOARD - start**/
+
+#dashboard{
+  display: block;
+  opacity: 1;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  transition: opacity 0.6s ease;
+}
+
+.user-info { 
+  color: white;
+  transform: translateY(5px) translateX(70px);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0;
+  margin-top: 3px;
+  margin-bottom: 32px;
+  width: 80%;
+  transition: opacity 1s ease;
+}
+.user-info span {
+  opacity: 0.66;
+  font-weight: 100;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.dashboard-top-stats {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 16px;
+  background-color:  rgba(0,0,0,0.05);
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.18);
+  padding: 22px 12px;
+  padding-bottom: 30px;
+  backdrop-filter: blur(22px);
+  border-radius: 12px;
+  transition: all 1s ease;
+}
+.dashboard-top-stats h3 {
+  margin: 5px 0 0px;
+
+  font-weight: 300;
+  opacity: 0.7;
+}
+.stat h3 {
+  font-size: 0.98rem;
+}
+.streak-header {
+  display: none;
+  font-size: 0.98rem;
+}
+.general-header {
+  display: none;
+  font-size: 0.98rem;
+}
+.general-stats {
+  display: none;
+  gap: 48px;
+  padding: 0px 20px 0px 5px;
+}
+.streak-days {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+}
+.streak-info {
+  text-align: center;
+  transform: translateX(-8px);
+  margin: 0;
+  color: rgb(245, 225, 255);
+  border-radius: 15px;
+  background-color: rgba(214, 193, 255, 0.248);
+  padding: 12px 8px;
+  width: 100%;
+  font-size: 14.7px;
+}
+.streak-days img {
+  opacity: 0.35;
+  width: 1.6rem;
+}
+.streak-days .streak-achieved {
+  opacity: 1;
+  width: 1.8rem;
+  transform: translateY(-2px);
+}
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.dashboard-top-stats hr {
+  width: 35%;
+  opacity: 0.14;
+  transform: rotate(90deg) translateX(13px);
+  height: 2%;
+}
+h5{
+  color: white;
+  opacity: 0;
+  margin-top: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity 0.7s ease;
+}
+.stat {
+  width: 13%;
+}
+.stat-icon {
+  position: absolute;
+  margin: 0;
+  transform: translateX(14px);
+  opacity: 0.78;
+  top:63.6%;
+  font-size: 1.25rem;
+}
+.stat-info{
+  transform: translateY(0px);
+}
+.lvl-up-info {
+  font-weight: 100;
+  font-size: 17px;
+  margin-bottom: 19px;
+  color: rgba(255, 255, 255, 0.579);
+}
+.stat-info h3{
+  opacity: 1;
+
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+
+}
+.stat-info p {
+  color: white;
+  font-size: 0.7rem;
+  
+  font-weight: 300;
+  width: 100px;
+  margin: 0;
+}
+
+/* Middle stats*/
+
+.dashboard-middle-stats {
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 17px;
+  gap: 11px;
+  color: white;
+  transition: all 1s ease;
+}
+
+/* Reading progress card */
+
+.reading-progress-card {
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.076);
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.23);
+  backdrop-filter: blur(22px);
+  border-radius: 8px;
+  padding: 0.9rem 1rem 0.8rem 0.1rem;
+  height: 9rem;
+  width: 21rem;
+  gap: 5px;
+  transition: all 0.5s ease-in;
+}
+
+.card-title {
+  font-size: 22px;
+  margin: 0px;
+  transform: translateY(-3.5px);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+.inside-card span{
+  position: absolute;
+  opacity: 0.4;
+  top: 32%;
+  left: 39%;
+  font-size: 35px;
+}
+.goal-info{
+  font-size: 23.5px;
+  margin: 0px;
+  transform: translateX(4px) translateY(-7px);
+  font-weight: 500;
+}
+
+.inside-card p{
+  margin: 0;
+  font-size: 13px;
+  font-weight: 200;
+  transform: translateX(4px) translateY(-4px);
+}
+.progress-info {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+.progress-circle {
+  position: relative;
+  display: inline-block;
+}
+.progress-ring {
+  width: 135px;
+  height: 160px;
+}
+.progress-ring__background {
+  r: 54;
+  cx: 68;
+  cy: 80;
+  fill: none;
+  stroke: #ffffff20;
+  stroke-width: 11;
+}
+.progress-ring__circle {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 12;
+  r: 54;
+  cx: 66.5;
+  cy: 83;
+  stroke-linecap: round;
+  stroke-dasharray: 314; /* 2π * r (50) */
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 0.6s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.circle-text {
+  position: absolute;
+  top: 54%;
+  left: 52%;
+  transform: translate(-50%,-76%);
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+/* Growth card */
+
+.growth-card {
+  background: rgba(0,0,0,0.08);
+  backdrop-filter: blur(22px);
+  border-radius:8px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.4rem 1.8rem 2rem 1.5rem;  
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.25);
+}
+.growth-card h4 {
+  margin: 0 0 6px 0;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.growth-sub {
+  font-size: 0.9rem;
+  opacity: 0.77;
+  font-weight: 200;
+  margin: 0;
+  transform: translateY(5px);
+}
+
+.growth-card h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.7rem;
+  transform: translateY(-12px);
+}
+.xp-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  margin-top: 2px;
+  overflow: hidden;
+}
+.xp-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f39c12, #e74c3c);
+  border-radius: 8px;
+  transition: width 0.6s linear;
+}
+.xp-count {
+  margin: 0;
+  height: 20px;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+
+/**Bottom stats**/
+
+.dashboard-bottom-stats{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 1.5rem;
+  color: #ffffff;
+  transition: all 1s ease;
+}
+.current-book-card {
+  background: rgba(0,0,0,0.08);
+  transform: translateY(-8.4px);
+  backdrop-filter: blur(22px);
+  padding: 0px 1.9rem 1px 1.2rem;  
+  height: 12rem;
+  border-radius: 8px;
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.25);
+}
+.no-book {
+  padding: 50px 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.no-book h3 {
+  font-weight: 700;
+  font-size: 26px;
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+.no-book p {
+  font-weight: 200;
+  font-size: 15px;
+  opacity: 0.9;
+  margin:0;
+  margin-bottom: 22px;
+}
+.no-book img {
+  position: absolute;
+}
+.quick-action-btns {
+  margin-top: 10px;
+}
+.quick-action-btns a{
+  margin: 23px;
+  font-size: 16.5px;
+  font-weight: 500;
+  border-radius: 12px;
+}
+#findBook svg {
+  height: 15px;
+  transform: translateX(-5px) translateY(2px);
+}
+#addBook svg{
+  height: 20px;
+  transform: translateX(-5px) translateY(4px);
+}
+
+#findBook{
+  padding: 14px 25px;
+  padding-left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#addBook {
+  padding: 14px 20px 14px 18px;
+  background-color: rgba(255, 255, 255);
+}
+
+.daily-article-card{
+  height: 170px;
+  background: rgba(0,0,0,0.06);
+  backdrop-filter: blur(22px);
+  padding: 0px 25px;  
+  border-radius: 8px;
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.25);
+}
+.no-article {
+  
+  background: rgba(0,0,0,0.06);
+  backdrop-filter: blur(22px);
+  padding: 0rem 1.8rem 2.2rem 1.5rem;  
+  border-radius: 8px;
+  box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.25);
+}
+.no-article h4 {
+  font-size: 18px;
+  margin: 0;
+  margin-top: 13px;
+  font-weight: 500;
+}
+.no-article p{
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.current-book {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.current-book .readBook {
+  border: none;
+  align-items: center;
+  font-family: Outfit;
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  height: 44px;
+}
+.current-book img {
+  border-radius: 5px;
+  width: 90px;
+  height: 142px;
+}
+.current-book div {
+  height: 95%;
+}
+.current-book h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+
+}
+.book-author {
+  font-weight: 200;
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0;
+  margin-top: 8px;
+}
+.pages-progress , .pages-left{
+  font-weight: 100;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.pages-progress {
+  opacity: 0.7;
+  font-size: 14px;
+}
+.pages-left {
+  position: absolute;
+  right: 30px;
+  text-align: right;
+}
+.daily-article {
+  display: flex;
+  align-items: center;
+}
+.daily-article .articleCover {
+  position: absolute;
+  top: 25px;
+  right: 18px;
+  z-index: 0;
+  width: 160px;
+  opacity: 0.44;
+  margin-top: 0px;
+}
+.daily-article .mainArticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 80%;
+}
+.daily-article .readArticle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 17px;
+  padding: 12px 14px;
+}
+.daily-article .readArticle p{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.daily-article svg {
+  height: 20px;
+  stroke: none;
+  fill: black;
+}
+.daily-article h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.daily-article p {
+  margin: 0;
+  font-size: 14.2px;
+  font-weight: 200;
+}
+.daily-article a{
+  color: white;
+}
+.daily-article .articleDescription {
+  font-size: 15px;
+}
+.readBook svg {
+  width:19px;
+  margin-right: 8px;
+}
+.readBook p {
+  margin: 0;
+  
+}
+
+/**DASHBOARD - end**/
+
+@media (min-width:1900px) {
+
+  #dashboard{
+    width: 88%;
+  }
+  .user-info {
+    font-size: 45px;
+    width: 120%;
+    margin-top: 38px;
+    margin-bottom: 48px;
+  }
+  .dashboard-top-stats {
+    width: unset;
+    padding-top: 33px;
+    margin-bottom: 25px;
+    padding-bottom: 58px;
+  }
+  .dashboard-top-stats h3 {
+    font-size: 2.1rem;
+    transform: translateY(-4px);
+  }
+  .day {
+    font-size: 1.75rem;
+  
+  }
+  .day img {
+    width: 2.6rem;
+  }
+  .general-stats {
+    margin-top: 7px;
+  }
+  .stat-info p {
+    font-size: 1.22rem;
+    width: 150px;
+    margin-top: 7px;
+  }
+  .stat-icon {
+    transform: translateY(-6px);
+    font-size: 2.8rem;
+
+  }
+  .streak-days {
+    margin-bottom: 20px;
+  }
+  .dashboard-middle-stats {
+    gap: 37px;
+  }
+  .reading-progress-card {
+    height: 18rem;
+    width: 39rem;
+    gap: 10px ;
+  }
+  .growth-card h4 {
+    font-size: 43.4px;
+    font-weight: 600;
+  }
+  .growth-sub {
+    margin-top: 15px;
+    font-size: 24px;
+  }
+  .growth-card h3 {
+    font-size: 46px;
+  }
+  .xp-count {
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 8px;
+    margin-bottom: 26px;
+  }
+  .progress-ring{
+    margin-left: 20px;
+    width: 13.25rem;
+    height: 13.25rem;
+  }
+  .progress-ring__background {
+    cx:98px;
+    cy: 100px;
+    r:90;
+    stroke-width: 20px;
+  }
+  .progress-ring__circle {
+        cx:98px;
+    cy: 100px;
+    r:90;
+    stroke-width: 20px;
+  }
+  .card-title {
+    font-size: 40px;
+    margin-bottom: 27px;
+  }
+  .goal-info {
+    font-size: 42px;
+  }
+  .circle-text {
+    font-size: 41.5px;
+    top: 53%;
+    left: 53%;
+  }
+  .xp-bar {
+    margin-top: 8px;
+    height: 17.5px;
+  }
+  .inside-card span {
+    top: 31.5%;
+    left: 37.5%;
+    font-size: 64px;
+  }
+  .inside-card p{
+    font-size: 22px;
+  }
+  .dashboard-bottom-stats {
+    margin-top: 155px;
+    gap: 20px;
+  }
+  .current-book-card {
+    width: 35.5rem;
+    height: 19rem;
+    gap: 27px;
+    padding: 0.85rem 2.2rem 0.7rem 1.9rem;
+  }
+  .current-book-card h4 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .book-author {
+    font-size: 25px;
+    margin-top: 12px;
+  }
+  .current-book img {
+    width: 14rem;
+    border-radius: 14px;
+    height: 15.5rem;
+  }
+  .pages-progress {
+    font-size: 23.5px;
+  }
+  .current-book .readBook {
+    height: 63px;
+    font-size: 22px;
+  }
+  .daily-article-card{
+    width: 400px;
+    height: 220px;
+    padding: 10px 35px 10px;
+    transform: translateY(79px) translateX(20px);
+  }
+  
+ .daily-article .articleCover {
+    top: 50px;
+    width: 190px;
+    height: 158px;
+  }
+  .mainArticle {
+    gap: 0px;
+    justify-content: space-around;
+    height: 80%;
+  }
+  .daily-article h2 {
+    font-size: 26px;
+  }
+  .daily-article p {
+    font-size: 18px;
+  }
+  .daily-article .readArticle {
+    width: 23px;
+    height: 23px;
+    padding: 14px;
+  }
+  .daily-article .readArticle p {
+    font-size: 19.5px;
+  }
+  .daily-article svg {
+    height: 44px;
+  }
+  .growth-card {
+    padding: 2rem 2.8rem 3rem 2.2rem;
+    width: 380px;
+    height: 325px;
+  }
+}
+@media (min-width:1600px) and (max-width:1899px){
+  #dashboard{
+    width: 88%;
+  }
+  .user-info {
+    font-size: 38px;
+    width: 120%;
+    margin-top: 35px;
+    margin-bottom: 48px;
+  }
+  .dashboard-top-stats {
+    width: unset;
+    margin-bottom: 25px;
+    padding-bottom: 55px;
+  }
+  .dashboard-top-stats h3 {
+    font-size: 1.7rem;
+  }
+  .day {
+    font-size: 1.5rem;
+  }
+  .day img {
+    width: 2.2rem;
+    padding-top: 5px;
+  }
+  .stat-info p {
+    font-size: 1.1rem;
+    width: 120px;
+    margin-top: 3px;
+    transform: translateY(-5px);
+  }
+  .stat-icon {
+    font-size: 2.3rem;
+  }
+  .streak-days {
+    margin-bottom: 10px;
+  }
+  .dashboard-middle-stats {
+    gap: 23px;
+  }
+  .reading-progress-card {
+    height: 15rem;
+    width: 33rem;
+    gap:24px ;
+  }
+  .growth-card h4 {
+    font-size: 36.4px;
+    font-weight: 600;
+  }
+  .growth-sub {
+    margin-top: 15px;
+    font-size: 19.4px;
+  }
+  .growth-card h3 {
+    font-size: 37px;
+  }
+  .xp-count {
+    font-size: 19px;
+  }
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 8px;
+    margin-bottom: 26px;
+  }
+  .progress-ring{
+    margin-left: 10px;
+    width: 11.25rem;
+    height: 11.25rem;
+  }
+  .progress-ring__background {
+    cx:93px;
+    cy: 90px;
+    r:80;
+  }
+  .progress-ring__circle {
+
+  stroke-width: 17;
+ cx:93px;
+    cy: 90px;
+    r:80;
+}
+  .card-title {
+    font-size: 36px;
+    margin-bottom: 27px;
+  }
+  .goal-info {
+    font-size: 37px;
+  }
+  .circle-text {
+    font-size: 38.5px;
+    top: 55%;
+    left: 55%;
+  }
+  .xp-bar {
+    margin-top: 8px;
+  }
+  .inside-card span {
+    top: 33%;
+    left: 39%;
+  }
+  .inside-card p{
+    font-size: 20px;
+  }
+  .dashboard-bottom-stats {
+    margin-top: 100px;
+    gap: 20px;
+  }
+  .current-book-card {
+    width: 30.5rem;
+    height: 16rem;
+    gap: 25px;
+    padding: 0.5rem 2.1rem 0.5rem 1.8rem;
+  }
+  .current-book-card h4 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  .book-author {
+    font-size: 20px;
+    margin-top:12px;
+  }
+  .current-book-card {
+    gap: 32px;
+  }
+  .current-book img {
+    width: 12rem;
+    height: 12.5rem;
+  }
+  .pages-progress {
+    font-size: 20.5px;
+  }
+  .current-book .readBook {
+    height: 55px;
+    font-size: 20px;
+  }
+  .daily-article-card{
+    width: 355px;
+    height: 200px;
+    transform: translateY(47px) translateX(10px);
+  }
+  .mainArticle {
+    gap: 0px;
+    justify-content: space-around;
+    height: 80%;
+  }
+  .daily-article h2 {
+    font-size: 23px;
+  }
+  .daily-article .readArticle {
+    width: 20px;
+  }
+  .daily-article .readArticle p {
+    font-size: 17.5px;
+  }
+  .growth-card {
+    padding-top: 1.6rem;
+    width: 330px;
+    height: 273px;
+  }
+}
+@media (min-width: 1336px) and (max-width:1599px){
+
+  .dashboard-top-stats {
+    margin-bottom: 6px;
+    padding-bottom: 40px;
+    width:95%;
+  }
+  .dashboard-top-stats h3 {
+    font-size: 1.44rem;
+  }
+  .general-stats {
+        gap: 65px;
+
+  }
+  .streak-days {
+    margin-bottom: 10px;
+  }
+  .day {
+    font-size: 1.3rem;
+  }
+  .day img {
+    width: 1.95rem;
+  }
+  .stat-icon {
+    font-size: 2.2rem;
+  }
+  .stat-info h3 {
+    font-size: 2rem;
+  }
+  .reading-progress-card {
+    height: 14rem;
+    width: 29rem;
+    gap:13px ;
+  }
+  .growth-card h4 {
+    font-size: 33px;
+    font-weight: 600;
+  }
+  .growth-sub {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  .growth-card h3 {
+    font-size: 35px;
+  }
+  .xp-count {
+    font-size: 17px;
+  }
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 8px;
+    margin-bottom: 26px;
+  }
+  .progress-ring{
+    width: 11.25rem;
+    height: 11.25rem;
+  }
+  .progress-ring__background {
+    cx:93px;
+    cy: 85px;
+    r:73;
+  }
+  .progress-ring__circle {
+
+  stroke-width: 17;
+    r: 73;
+  cx: 93;
+  cy: 85;
+}
+  .card-title {
+    font-size: 30px;
+  }
+  .goal-info {
+    font-size: 33px;
+  }
+  .circle-text {
+    font-size: 35px;
+  }
+  .inside-card span {
+    top: 33%;
+    left: 42%;
+  }
+  .inside-card p{
+    font-size: 17px;
+  }
+  .dashboard-bottom-stats {
+    margin-top: 82px;
+  }
+  .current-book-card {
+    width: 25rem;
+    height: 14rem;
+    gap: 25px;
+  }
+  .current-book-card h4 {
+    font-size: 27.3px;
+    font-weight: 600;
+  }
+  .book-author {
+    font-size: 17px;
+    margin-top: 8px;
+  }
+  .current-book img {
+    width: 11rem;
+    height: 11rem;
+  }
+  .pages-progress {
+    font-size: 16.5px;
+  }
+  .current-book .readBook {
+    height: 50px;
+    font-size: 15.5px;
+  }
+  .daily-article-card{
+    width: 320px;
+    height: 192px;
+    transform: translateY(25px) translateX(14px);
+  }
+  .mainArticle {
+    gap: 0px;
+    justify-content: space-around;
+    height: 80%;
+  }
+  .daily-article h2 {
+    font-size: 20px;
+  }
+  .daily-article .readArticle {
+    width: 20px;
+  }
+  .daily-article .readArticle p {
+    font-size: 17.5px;
+  }
+  .user-info {
+    width: 110%;
+    padding-top: 15px;
+    font-size: 35px;
+    font-weight: 500;
+  }
+  #dashboard {
+    width: 93%;
+  }
+  .growth-card {
+    height: 250px;
+    width: 300px;
+  }
+  
+  .stat-info p {
+    font-size: 0.9rem;
+    width: 100px;
+  }
+  .dashboard-top-stats h3 {
+    font-size: 1.6rem;
+
+  }
+}
+@media (min-width: 1080px) and (max-width:1336px) {
+  .user-info {
+    font-size: 30px;
+    width: 100%;
+  }
+  .dashboard-top-stats {
+    padding-top: 8px;
+    width: 87.5%;
+  }
+  .dashboard-middle-stats {
+    gap: 23px;
+  }
+  .dashboard-bottom-stats {
+    margin-top: 2.8rem;
+    padding-bottom: 50px;
+    gap: 18px;
+  }
+  .stat h3 {
+    font-size: 1.44rem;
+    transform: translateY(3px);
+  }
+  .general-header ,.streak-header {
+    font-size: 1.25rem;
+  }
+  .streak-days {
+    margin-bottom: 10px;
+  }
+  .general-stats {
+    padding-right: 30px ;
+    gap: 35px;
+
+
+  }
+  .day {
+    font-size: 1.2rem;
+  }
+  .stat-icon{
+    font-size: 2rem;
+  }
+  .stat-info h3 {
+    font-size: 23px;
+  }
+  .stat-info p {
+    font-size: 0.8rem;
+  }
+  #dashboard {
+    width: 95%;
+  }
+  .day img {
+    width: 1.9rem;
+  }
+  .reading-progress-card {
+    height: 12rem;
+    width: 25rem;
+    gap: 5px;
+  }
+  .card-title {
+    font-size: 26.5px;
+  }
+  .inside-card span {
+    top: 28.5%;
+    left: 37%;
+    font-size: 52px;
+  }
+  .inside-card p {
+    font-size: 15px;
+  }
+  .goal-info {
+    font-size: 28.5px;
+  }
+  .progress-circle {
+  position: relative;
+  display: inline-block;
+}
+.progress-ring {
+  width: 150px;
+  height: 160px;
+}
+.progress-ring__background {
+  r: 58;
+  cx: 75;
+  cy: 80;
+  fill: none;
+  stroke: #ffffff20;
+  stroke-width: 17;
+}
+.progress-ring__circle {
+
+  stroke-width: 17;
+    r: 58;
+  cx: 75;
+  cy: 80;
+}
+.progress-ring__circle {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 17;
+  stroke-linecap: round;
+  stroke-dasharray: 314; 
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 0.6s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.circle-text {
+  position: absolute;
+  top: 54%;
+  left: 52%;
+  transform: translate(-50%,-76%);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.growth-card {
+  width: 260px;
+  height: 220px;
+}
+.growth-card h4 {
+  font-size: 29px;
+}
+.growth-sub {
+  font-size: 0.95rem;
+} 
+.growth-card h3 {
+  font-size: 2rem;
+}
+.xp-count {
+  font-size: 1rem;
+}
+.daily-article-card {
+  transform: translateY(44px);
+}
+.current-book-card {
+  height: 14rem;
+  width: 23rem;
+  padding: 0px 1.9rem 1px 1.5rem;  
+}
+.no-book {
+  padding-top: 20px;
+}
+.current-book img{
+  width: 100px;
+  height: 158px;
+}
+.current-book h4 {
+  margin-top: 27px;
+  font-size: 25px;
+}
+.book-author {
+  font-size: 16px;
+  margin-top: 11px;
+}
+.pages-progress {
+  font-size: 16px;
+}
+.current-book div {
+  height: 100%;
+}
+.readBook svg {
+  width: 21px;
+  margin-right: 5px;
+}
+.daily-article-card {
+  width: 280px;
+  height: 182px;
+}
+}
+@media (min-width:768px) {
+  .user-info {
+    width: unset;
+    transform: none;
+  }
+  .main-stats {
+    gap: 0px;
+  }
+  .dashboard-top-stats {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-right: 45px;
+  }
+  .dashboard-top-stats h3 {
+    font-weight: 500;
+    opacity: 0.55;
+  }
+  .streak-header {
+    display: inline-block;
+  }
+  .streak-info {
+    display: none;
+  }
+  .general-header {
+    display: inline-block;
+  }
+  .general-stats {
+    display: flex;
+  }
+  .stat {
+    display: flex;
+    width: 100%;
+    gap: 6.5px;
+  }
+
+  .stat-info h3 {
+    opacity: 1;
+   
+  }
+
+  .stat-icon {
+    opacity: 1;
+    transform: none;
+    margin: 0;
+    top: 0;
+    position: relative;
+  }
+  .stat {
+    width: 100%;
+    gap: 6.5px;
+  }
+  .streak-days {
+    justify-content: space-around;
+    gap: 40px;
+  }
+  .dashboard-middle-stats, .dashboard-bottom-stats {
+    flex-direction: row;
+  }
+  .reading-progress-card {
+    padding: 0.9rem 1rem 0.8rem 0.7rem;
+  }
+  .dashboard-middle-stats {
+    margin-top: 48px;
+    height: 12.5rem;
+  }
+  .daily-article .mainArticle {
+    justify-content: unset;
+    height: unset;
+  }
+  .no-book {
+  padding-top: 20px;
+}
+
+}
+

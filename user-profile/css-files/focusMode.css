@@ -1,0 +1,1656 @@
+#focusMode {
+    width: 100%;
+    color: white;
+}
+#focusMode button, #focusMode svg {
+    cursor: pointer;
+}
+
+.focusModeNav {
+    display: flex;
+    gap: 15px;
+    position: fixed;
+    z-index: 0;
+    bottom: 7%;
+    right: 3%;
+}
+.switchSections svg {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    width: 25px;
+    border-radius: 22px;
+    transition: all 0.5s ease-in;
+}
+.editSectionBtn {
+    background-color: rgba(0, 0, 0, 0.13);
+    padding: 15px;
+    width: 25px;
+    border-radius: 22px;
+    backdrop-filter: blur(20px);
+    transition: all 0.5s ease-in;
+
+}
+.switchSections  svg#on {
+    background-color: blueviolet;
+    padding-right: 18px;
+    padding-left: 19px;
+    border-radius: 30px;
+}
+.focusSection {
+    padding-left: 22px;
+}
+.scheduleSection {
+    padding-right: 20px;
+
+}
+.switchSections {
+
+    border-radius: 35px;
+    background-color: rgba(0, 0, 0, 0.13);
+    backdrop-filter: blur(20px);
+    border: 2px solid white;
+    display: flex;
+    gap: 13px;
+}
+.focusSection {
+    transform: translateY(-1.3px);
+}
+.popupMessage {
+    opacity: 0;
+    display: none;
+    top: 0;
+width: 100%;
+    position: absolute;
+    z-index: 10;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.058);
+    backdrop-filter: blur(17px);
+    border-radius: 15px;
+    transition: all 0.5s ease-in;
+    padding: 38px 0px;
+    padding-bottom: 15px;
+}
+.popupMessage div {
+    justify-content: center;
+}
+#closePopup {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 15px;
+    font-size: 18px;
+}
+#noPopup {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+.focus-main {
+    position: relative;
+    z-index: 0;
+}
+.quote {
+    position: absolute;
+    left: 12%;
+    width: 80%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    top: -95px;
+    transition: all 0.5s ease-in;
+}
+.focus {
+    margin: 45% 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.5s ease-in;
+}
+.schedule {
+    padding-top: 12px;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+.startSession {
+
+    margin-top: 8px;
+    display: flex;
+    width: 68%;
+    height: auto;
+    backdrop-filter: blur(20px);
+    padding: 0rem 2rem 1.2rem;
+    background-color: rgba(0, 0, 0, 0.068);
+    border-radius: 22px;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    transition: all 0.5s ease-in;
+}
+.startSession h2 {
+    position: relative;
+    font-size: 25px;
+    margin-top: 38px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    transform: translateY(-8px);
+    opacity: 0.87;
+}
+.startSession span {
+    opacity: 0.6;
+    position: absolute;
+    font-size: 35px;
+    top: 8%;
+}
+.actions svg{
+    width: 36px;
+}
+
+.timer {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.showTimerInfo {
+    position: absolute;
+    width: 20px;
+    top: 33%;
+    right:18%;
+}
+.actions {
+    display: flex;
+    align-items: center;
+   gap: 30px;
+}
+.actions div {
+    display: flex;
+    gap: 15px;
+}
+.actions div p{
+    opacity: 0.7;
+    width: 70%;
+}
+.start {
+    border: none;
+    font-size: 20px;
+    height: 53px;
+    font-weight: 500;
+    font-family: outfit;
+    color: white;
+    background-color: rgb(170, 83, 251);
+    border-radius: 15px;
+    padding: 0px 34px;
+}
+.assignedBook {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.068);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    padding-right: 20px;
+    width: 75%;
+    border-radius: 15px;
+    gap: 15px;
+    transition: all 0.5s ease-in;
+    align-self: center;
+}
+.assignedBook div{
+    width: 100%;
+}
+.assignedBook img{
+    width: 95px;
+    height: 144px;
+    border-radius: 10px;
+}
+.assignedBook h3 {
+    margin-top: 4px;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+.assignedBook h4{
+    margin: 0;
+    opacity: 0.5;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+.assignedBook p {
+    font-size: 12.8px;
+    font-weight: 300;
+    margin-top: 8px;
+    margin-bottom:12px;
+}
+.assignedBook span{
+    font-size: 14px;
+    font-weight: 200;
+    opacity: 0.7;
+    
+}
+.assignedBook .progress-bar {
+    margin-top: 18px;
+    height: 13px;
+}
+.motivation {
+    font-size: 20px;
+}
+.sessionReward {
+    opacity: 0;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 15.5%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(7px);
+    border-radius: 15px;
+    padding: 20px;
+    width: 33%;
+    height: 60%;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s ease-in;
+}
+.sessionReward h2{
+    font-size: 30px;
+    margin-bottom: 10px
+}
+.sessionReward p{
+    font-size: 22px;
+}
+.sessionsList {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+
+    flex-direction: column;
+    column-gap: 40px;
+    row-gap: 18px;
+    top: 10px;
+}
+#scheduleSession {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    height: 165px;
+    width: 300px;
+    gap: 18px;
+    background-color: rgba(0, 0, 0, 0.046);
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+.schedule h2 {
+    margin-left: 75px;
+    font-size: 25.5px;
+    transform: translateY(-7px);
+    width: 70%;
+    margin-bottom: 45px;
+}
+#scheduleSession svg {
+    width: 50px;
+}
+#scheduleSession h3 {
+    font-weight: 500;
+    font-size: 25px;
+}
+.session-card {
+    background-color: rgba(0, 0, 0, 0.046);
+    box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    transition: opacity 0.5s ease-in;
+}
+.session-card-main {
+    width: 320px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px 30px;
+    padding-left: 10px;
+    height: 165px;
+    transition: all 0.5s ease-in;
+}
+.session-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.session-assigned-book {
+    width: 83%;
+    transform: translateX(25px);
+    display: flex;
+    border-radius: 10px;
+    padding:11px 20px;
+    background-color: rgb(126, 77, 150);
+    gap: 20px;
+}
+.session-assigned-book h4{
+    font-size: 19px;
+    margin: 0;
+}
+.progress {
+    font-size: 18px;
+    font-weight: 500;
+    transform: translateY(11px) translateX(91px);
+}
+.book-svg {
+    width: 27px;
+}
+.session-menu {
+    position: relative;
+    z-index: 4;
+    width: 42px;
+
+}
+.assigned {
+    transform: translateX(20px) translateY(48px);
+}
+.session-header h4, .session-header p, .session-assigned-book p{
+    margin: 0;
+}
+
+.session-assigned-book p {
+    font-size: 13.8px;
+    font-weight: 200;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+.delete-assigned-book {
+    cursor: pointer;
+    font-size: 30px;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    transform: translateY(-10px);
+}
+.session-header h4 {
+    font-weight: 500;
+    width: 200px;
+    width: 100%;
+    font-size: 22px;
+}
+.session-header p {
+    font-size: 14px;
+    opacity: 0.5;
+    font-weight: 200;
+    width: 200px;
+}
+.session-meta {
+    display: flex;
+    gap: 30px;
+}
+.session-days {
+    transform: translateY(-4px);
+}
+.session-meta div p {
+    margin: 0;
+    font-size: 18px;
+}
+.session-meta span {
+    display: inline-block;
+    font-weight: 200;
+    opacity: 0.9;
+    transform: translateX(28px);
+}
+.session-meta p {
+    width: 120%;
+}
+.session-days {
+    display: flex;
+    justify-content: center;
+    gap: 9.5px;
+}
+.session-days span{
+    padding: 8px 14.5px;
+    border-radius: 10px;
+    font-size: 14.3px;
+}
+.session-days span.active {
+    background-color: rgba(0, 0, 0, 0.088);
+}
+#focusMode .close-menu {
+    font-size: 20px;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 28px;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 20px;
+    z-index: 0;
+    transition: all 0.5s ease-in;
+}
+.session-card .menu-actions div{
+    align-items: center;
+}
+.session-card .menu-actions p{
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 8px;
+    margin: 5px;
+}
+.session-card .menu-actions svg {
+    width: 27px;
+}
+#assignBookList {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.047);
+    border-radius: 15px;
+    height: 70%;
+    padding: 40px 59px 50px;
+    padding-right: 0;
+    padding-left: 40px;
+    width: 100%;
+    backdrop-filter: blur(17px);
+    transition: all 0.5s ease-in;
+}
+.assign-book-list {
+    margin-top: 10px;
+    width: 100%;
+    transform: translateX(-15px);
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+}
+#assignBookList h3{
+    font-weight: 600;
+    font-size: 26px;
+    margin-right: 12px;
+    margin-top: 0px;
+    margin-bottom: 9px;
+}
+.session-name {
+    margin-top: 2px;
+    opacity: 0.8;
+    font-size: 24px;
+}
+.assign-book-item {
+    border-radius: 10px;
+    padding: 22px 18px;
+    padding-top: 18px;
+}
+.assign-book-item:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.033);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.227);
+}
+.assign-book-item img {
+    width: 130px;
+    border-radius: 10px;
+}
+.assign-book-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+.assign-book-item strong {
+    font-size: 18px;
+}
+.close-assignBook-section {
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0.7;
+    top: 32px;
+    left: 23px;
+}
+
+#newSessionModal{
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    top:0;
+    transform: translateY(-5px);
+    z-index: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 5px 0 14px;
+    justify-self: center;
+    align-items: center;
+    transition: all 0.5s ease-in;
+}
+.sess-top {
+    flex-direction: column;
+    gap: 0;
+}
+
+#closeModal {
+    font-size: 38px;
+    margin: 0;
+    margin-left: 88%;
+    cursor: pointer;
+}
+.session-top {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+   
+}
+.session-top label {
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.session-top input {
+    background-color: transparent;
+    border-radius: 0px;
+    font-size: 18px;
+    width: 45%;
+    font-family: outfit;
+    font-weight: 200;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    border: none;
+    border-bottom: 1px solid white;
+    text-decoration-thickness: 0.5px;
+    color: white;
+}
+.session-top input::placeholder {
+    color: rgba(255, 255, 255, 0.384);
+}
+.session-top input:focus {
+    outline: none;
+    font-weight: 400;
+}
+/** Schedule session setup **/
+
+.focus-scheduler {
+  top: 127px;
+  display: flex;
+  flex-direction: column;
+  width: 82%;
+  text-align: center;
+  transform: translateX(0px);
+  z-index: 100;
+  border-radius: 30px;
+}
+
+.time-box {
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 16px;
+  font-size: 31px;
+  color: rgba(255, 255, 255, 0.812);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.time-display div{
+    align-items: center;
+    display: flex;
+}
+.time-display p {
+    margin: 0;
+    margin-top: 5px;
+    margin-right: 19px;
+    font-size: 22px;
+    font-weight: 400;
+}
+.part1 .scroll-picker {
+  top: 115px;
+}
+.scroll-picker {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  transform: translateY(-10px) translateX(5px);
+  height: 220px;
+  flex-direction: column;
+  gap: 30px;
+  align-self: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.picker-columns {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+.scroll-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  width: 80px;
+  color: white;
+  font-size: 27px;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
+  transition: all 0.5s ease;
+}
+
+.scroll-column::-webkit-scrollbar {
+  display: none; 
+}
+
+.scroll-column li {
+
+    height: 40px;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.25s ease-in;
+}
+
+.scroll-column li.active {
+  font-size: 32px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+
+/**Section 3: Part 2 Focus duration+days(weekly frequency)choice**/
+
+.part2{
+  display: flex;
+  flex-direction: column;
+  
+  gap:8px;
+  margin-bottom: 8px;
+}
+
+.frequency {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 90%;
+    gap: 5px;
+    transition: filter 0.5s ease;
+}
+#day-picker {
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: 300;
+  font-size: 15px;
+  display: flex;
+  gap: 2px;
+  transition: all 1s ease;
+}
+#setEveryday {
+  font-weight: 100;
+  transform: translateY(10px);
+  text-align: center;
+  margin: 0;
+
+}
+.radio {
+  accent-color: rgb(255, 255, 255);
+}
+.frequency h3 {
+  cursor: pointer;
+  text-align: center;
+  margin-bottom:8px;
+  font-weight: 100;
+  opacity: 0.42;
+  font-size: 14px;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  display: none;
+}
+ul::-webkit-inner-spin-button,
+ul::-webkit-outer-spin-button {
+  opacity: 0;
+  display: none;
+}
+
+#time {
+    width: 100%;
+  display: flex;
+  margin: 0;
+  gap: 8px;
+  margin-top: 7px;
+  margin-left: 8px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 20px;
+  transition: filter 0.5s ease;
+}
+#time p{
+    font-size: 18px;
+    font-weight: 200;
+    padding: 10px 15px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+#time p.chosen  {
+  background-color: #0000000e;
+  border-radius: 12px;
+  padding: 10px 18px;
+}
+
+.frequency p {
+  cursor: pointer;
+  margin: 0;
+  font-size:16px;
+    border-radius: 12px;
+  padding: 10px 18px;
+  transition: all 0.5s ease;
+}
+.frequency p.chose {
+  background-color: #0000000e;
+
+  padding: 10px 18px;
+}
+.time-display {
+  align-self: center;
+  display: flex;
+  gap: 0px;
+  margin: 0;
+  margin-top: 35px;
+}
+#focus-end {
+    padding-left:8px;
+}
+.time-display img {
+  transform: translateY(15px);
+  opacity: 0.85;
+  width: 28px;
+  height:30px;
+}
+
+.part2 .scroll-picker{
+  display: none;
+  border-radius: 30px;
+  align-items: center;
+  align-self: center;
+  top: 240px;
+  height: 190px;
+  width: 390px;
+}
+.confirm-picker-btn {
+  position: relative;
+  cursor: pointer;
+  z-index: 90;
+  font-family: outfit;
+  font-weight: 300;
+  border: none;
+  opacity: 0;
+  font-size: 17px;
+  transform:  translateX(3px) translateY(-20px);
+  color: rgba(255, 255, 255, 0.682);
+  background-color: transparent;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#custom-duration-picker {
+  transition: opacity 2s ease;
+}
+
+.part3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 25px;
+}
+.part3 div {
+    display: flex;
+    justify-content: space-between;
+}
+.part3 label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+#readingMode {
+    border: none;
+    font-family: outfit;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.049);
+}
+#saveSession {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: outfit;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.edit-focus-mode {
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: none;
+    gap: 35px;
+    opacity: 0;
+    padding: 33px;
+    padding-top: 50px;
+    background-color: rgba(0, 0, 0, 0.55);
+    height: 100vh;
+    width:90%;
+    backdrop-filter: blur(17px);
+    transition: all 0.5s ease-in;
+}
+.edit-categories {
+    margin-top: 38px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.edit-categories span {
+    cursor: pointer;
+    position: absolute;
+    font-size: 35px;
+    top: 25px;
+    right: 30px;
+}
+.edit-categories div {
+    width: 150px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    font-size: 17.8px;
+    font-weight: 500;
+    padding: 0px 15px;
+    border-radius: 8px;
+}
+.edit-categories div#shown {
+    background-color: #8e8e8e15;
+
+}
+.edit-categories div svg {
+    width: 22px;
+}
+.shown-edit-category {
+    overflow: scroll;
+    width: 100%;
+    padding-right: 10px;
+}
+*::-webkit-scrollbar {
+
+  height: 5px;
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #f6f9fa03;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #ffffff0c;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #ffffff47;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #5252524d;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #5252524d;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #5252524d;
+}
+.shown-edit-category h2 {
+    font-size: 30px;
+    margin-top: 0px;
+}
+.shown-edit-category h3{
+    font-size: 23px;
+    font-weight: 600;
+}
+.shown-edit-category p {
+    font-size: 16px;
+    font-weight: 200;
+    opacity: 0.7;
+}
+.shown-edit-category svg {
+    width: 20px;
+}
+.themes {
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 10px;
+    column-gap:40px;
+    width: 85%;
+}
+
+.themes h4 {
+    text-align: center;
+}
+
+.themes h5 {
+    font-weight: 600;
+    font-size: 17px;
+    transform: translateX(110px);
+}
+.themes h4 {
+    margin: 8px 0px;
+}
+.theme-option, .focus-theme {
+    width: 144px;
+    height: 90px;
+    border-radius: 10px;
+}
+.theme-option#pickedTheme, .focus-theme#pickedTheme {
+    border: 2px solid white;
+}
+.category-content button {
+    border: none;
+    margin-top: 18px;
+    font-size: 18px;
+    font-family: outfit;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+.hour,.mins {
+    display: flex;
+    flex-direction: column;
+    font-size: 21px;
+    font-weight: 500;
+}
+.hour {
+    margin-right: 30px;
+}
+.hour input, .mins input{
+    margin-top: 8px;
+    font-size: 20px;
+    font-family: outfit;
+    width: 60px;
+    padding-left: 15px;
+    height: 40px;
+    border: 2px solid rgb(132, 132, 132);
+    background-color: transparent;
+    color: white;
+    border-radius: 8px;
+}
+
+.quotes-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+}
+.quotes-list p {
+    margin: 0;
+    font-size:19px;
+    font-weight: 400;
+    opacity: 1;
+    padding: 25px 28px;
+    padding-left: 20px;
+    background-color: transparent;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.258);
+    border-radius: 10px;
+    
+}
+.quotes-list p.pickedQuotes {
+    border: 2px solid rgba(255, 255, 255, 0.411);
+}
+
+@media (min-width:1440px) and (max-width:1899px){
+    .startSession h2 {
+        font-size: 27px;
+    }
+    .scheduleSection {
+        padding-right: 22px;
+    }
+    
+    #scheduleSession {
+        width: 370px;
+        height: 215px;
+    }
+    .session-card-main{
+        width: 428px;
+    }
+    .schedule h2 {
+        font-size: 34px;
+    }
+    #scheduleSession h3 {
+        font-size: 32.8px;
+    }
+    .timer {
+        font-size: 4rem;
+        margin-bottom: 2px;
+    }
+    .start {
+        height: 65px;
+        font-size: 24px;
+        padding: 0px 48px;
+    }
+    .assignedBook {
+        width: 29.5%;
+        height: 18vh;
+        padding: 22px;
+    }
+    .assignedBook img {
+        width: 106px;
+        height: 161px;
+    }
+    .assignedBook h4 {
+        font-size: 16.5px
+    }
+    .assignedBook h3 {
+        font-size: 27px;
+    }
+    .assignedBook p {
+        font-size: 15.5px;
+    }
+    .assignedBook span {
+        font-size: 17px;
+    }
+    .quote {
+        left: 55%;
+        font-size: 32px;
+        width: 44%;
+    }
+    .switchSections svg {
+        padding-top: 17px;
+        padding-bottom: 17px;
+        width: 30px;
+    }
+    .switchSections svg#on {
+        padding-right: 23px;
+        padding-left: 24px;
+    }
+    .editSectionBtn {
+        width: 31px;
+        padding: 18px;
+    }
+    .session-menu {
+        width: 28px;
+    }
+    .session-header h4 {
+        font-size: 26px;
+    }
+    .session-header p {
+        font-size: 17px;
+        transform: translateX(53px);
+    }
+    .session-meta, .session-days {
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+    .session-meta div p {
+        font-size: 21.2px;
+    }
+    .session-days {
+        margin-top: 42px;
+        gap: 9px;
+    }
+    .session-days span {
+        font-size: 17px;
+        padding: 11px 17px;
+    }
+    #assignBookList {
+        
+        width: 100vh;
+        height: 60vh;
+    }
+    .assign-book-list {
+        margin-top: 20px;
+    }
+    .assign-book-item img {
+        width: 160px;
+    }
+    .assign-book-item strong {
+        font-size: 24px;
+    }
+    #assignBookList h3 {
+        font-size: 33px;
+    }
+    .session-name {
+        font-size: 30px;
+    }
+    #newSessionModal {
+        width: 70vh;
+        top: 58px;
+        align-items: baseline;
+        padding-left: 50px;
+        padding-bottom: 60px;
+        padding-top: 38px;
+    }
+    #closeModal {
+        font-size: 51px;
+    }
+    .session-top label {
+        font-size: 38px;
+        width: 50%;
+    }
+    
+    .time-display {
+        margin-top: 30px;
+    }
+    .session-top {
+    
+        margin-left: 20px;
+    }
+
+    .session-top input {
+        font-size: 22px;
+    }
+    .time-box {
+        font-size: 40px;
+    }
+    .time-display p{
+        font-size: 30px;
+    }
+        #time p {
+        font-size: 26px;
+    }
+        .frequency p {
+        font-size: 22px;
+    }
+        #day-picker {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .part3 label{
+        font-size: 24px;
+    }
+    #readingMode {
+        font-size: 21px;
+    }
+    #saveSession {
+        font-size: 20px;
+    }
+    .scroll-picker {
+        height: 250px;
+    }
+    .scroll-column li.active{
+        font-size: 42px;
+    }
+    .scroll-column li {
+        height: 40px;
+        font-size: 35px;
+    }
+    .confirm-picker-btn {
+        font-size: 22px;
+    }
+}
+@media (min-width:1900px) {
+
+    .startSession h2 {
+        font-size: 33px;
+        
+    }
+    .scheduleSection {
+        padding-right: 27px;
+        padding-left: 13px;
+    }
+    .focusSection {
+        padding-left: 35px;
+    }
+    #scheduleSession {
+        width: 400px;
+        padding-left: 60px;
+        height: 245px;
+        gap: 25px;
+    }
+    .session-card-main{
+        width: 458px;
+    }
+    .schedule h2 {
+        font-size: 45px;
+    }
+    #scheduleSession h3 {
+        font-size: 37.8px;
+    }
+    #scheduleSession svg {
+        width: 60px;
+    }
+    .timer {
+        font-size: 4.7rem;
+        margin-bottom: 8.5px;
+    }
+    .start {
+        height: 76px;
+        font-size: 29px;
+        padding: 0px 58px;
+    }
+    .assignedBook {
+        width: 28.5%;
+        height: 19vh;
+        padding: 28px;
+        gap: 26px;
+    }
+    .assignedBook img {
+        width: 130px;
+        height: 201px;
+    }
+    .assignedBook h4 {
+        font-size: 21.5px
+    }
+    .assignedBook h3 {
+        font-size: 35px;
+    }
+    .assignedBook p {
+        font-size: 20.5px;
+    }
+    .assignedBook span {
+        font-size: 22px;
+    }
+    .assignedBook .progress-bar{
+        height: 15.5px;
+    }
+    .quote {
+        left: 55%;
+        font-size: 40px;
+        width: 44%;
+    }
+    .switchSections {
+        border-radius: 55px;
+    }
+    .switchSections svg {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        width: 35px;
+    } 
+    .switchSections svg#on {
+        padding-right: 28px;
+        border-radius: 40px;
+        padding-left:30px;
+    }
+    .editSectionBtn {
+        width: 37px;
+        padding: 25px;
+    }
+    .session-menu {
+        width: 33px;
+    }
+    .session-header h4 {
+        font-size: 32px;
+    }
+    .session-header p {
+        font-size: 22px;
+        transform: translateX(20px);
+    }
+    .session-meta, .session-days {
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+    .session-meta div p {
+        font-size: 24.5px;
+    }
+    .session-days {
+        margin-top: 42px;
+        gap: 9px;
+    }
+    .session-meta span{
+        font-size: 21px;
+    }
+    .session-days span{
+        font-size: 20px;
+        padding: 11px 22px;
+    }
+    .edit-categories span {
+        font-size: 50px;
+    }
+    .edit-focus-mode {
+        width: 56%;
+        padding-top: 70px;
+    }
+    .edit-categories div {
+        font-size: 26px;
+        padding-left: 28px;
+        width: 230px;
+        gap: 20px;
+    }
+    .edit-categories div svg {
+        width: 29px;
+    }
+    .shown-edit-category h2 {
+        font-size: 37px;
+    }
+    .shown-edit-category p {
+        font-size: 24px;
+        opacity: 0.6;
+        margin-bottom: 40px;
+    }
+    .shown-edit-category h3 {
+        font-size: 30px;
+    }
+    .theme-option, .focus-theme {
+        width: 257px;
+        height: 160px;
+    }
+    .themes h4 {
+        font-size: 22px;
+    }
+    .themes div{
+        width: 257px;
+    }
+    .themes {
+        margin-top: 35px;
+        column-gap: 40px;
+        row-gap: 40px;
+    }
+    .hour, .mins {
+        font-size: 28px;
+    }
+    .hour input, .mins input {
+        font-size: 24px;
+        width: 75px;
+        height: 50px;
+    }
+    .category-content button {
+        font-size: 25px;
+        margin-top: 25px;
+        padding: 12px 28px;
+    }
+    #assignBookList {
+        
+        width: 100vh;
+        height: 60vh;
+    }
+    .assign-book-list {
+        margin-top: 20px;
+    }
+    .assign-book-item img {
+        width: 160px;
+    }
+    .assign-book-item strong {
+        font-size: 24px;
+    }
+    #assignBookList h3 {
+        font-size: 33px;
+    }
+    .session-name {
+        font-size: 30px;
+    }
+    #newSessionModal {
+        width: 70vh;
+        top: 58px;
+        align-items: baseline;
+        padding-left: 50px;
+        padding-bottom: 80px;
+        padding-top: 63px;
+    }
+    #closeModal {
+        font-size: 51px;
+    }
+    .session-top label {
+        font-size: 43px;
+        width: 50%;
+    }
+    
+    .time-display {
+        margin-top: 50px;
+    }
+    .session-top {
+    
+        margin-left: 20px;
+        gap: 0px;
+    }
+
+    .session-top input {
+        font-size: 33px;
+    }
+    .time-box {
+        font-size: 50px;
+    }
+    .time-display p{
+        font-size: 40px;
+    }
+    .time-display div {
+        gap: 20px;
+    }
+        #time p {
+        font-size: 32px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+        .frequency p {
+        font-size: 30px;
+        
+    } 
+        #day-picker {
+        width: 120%;
+        justify-content: space-between;
+    }
+    .part3{
+        margin-top: 30px;
+    }
+    .part3 label{
+        font-size: 32.5px;
+    }
+    #readingMode {
+        font-size: 25px;
+    }
+    #saveSession {
+        font-size: 24.5px;
+    }
+    .scroll-picker {
+        height: 250px;
+    }
+    .scroll-column li.active{
+        font-size: 42px;
+    }
+    .scroll-column li {
+        height: 40px;
+        font-size: 35px;
+    }
+    .confirm-picker-btn {
+        font-size: 22px;
+    }
+}
+@media (min-width:1440px) {
+    .startSession {
+        width: 27%;
+        height: 26vh;
+    }
+    .menu {
+        padding-left: 35px;
+    }
+    .session-header {
+        margin-top: 10px;
+    }
+    
+    #focusMode .close-menu{
+        font-size: 27px;
+    }
+    .menu-actions {
+        gap: 18px;
+    }
+    .session-card .menu-actions p {
+        font-size: 23px;
+    }
+    
+    
+    .focus-scheduler, .part2, .frequency, #day-picker, .part1 .scroll-picker {
+        align-self: center;
+    }
+
+    #time {
+        margin-right: 40px;
+    }
+
+    
+}
+@media(min-width:1250px) and (max-width:1439px) {
+    .startSession {
+        width: 25%;
+    }
+    .quote {
+        left: 65%;
+        width: 35%;
+        top: 40px;
+    }
+    .assignedBook {
+        width: 27.5%;
+    }
+    .schedule h2 {
+        font-size: 30px;
+    }
+    #scheduleSession {
+        height: 182px;
+        width: 290px;
+    }
+    .theme-option, .focus-theme {
+        width: 178px;
+        height: 110px;
+    }
+    .actions div p {
+        font-size: 15px;
+    }
+    .actions svg {
+        width: 30px;
+    }
+}
+@media (min-width:768px) {
+    .sess-top {
+    flex-direction: row;
+    gap: 15px;
+}
+    .schedule {
+        padding-top: 0px;
+    }
+    .focus {
+        margin: unset;
+    }
+    .startSession , .assignedBook {
+        align-self: unset;
+    }
+    .sessionsList {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 250px;
+    }
+    .schedule h2 {
+        margin-left: 0;
+        width: unset;
+        transform: none;
+    }
+    .scroll-picker {
+        align-self: unset;
+        transform: translateY(-10px) translateX(5px);
+    }
+    .quote {
+        text-align: right;
+    }
+    .edit-focus-mode {
+        width: 58%;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .edit-categories {
+        display: block;
+        margin-top: 0px;
+    }
+    .edit-categories span {
+        top: 2px;
+        left: 0;
+    }
+    .themes {
+        column-gap:  0px;
+    }
+    #focusMode .themes div {
+        width: 73%;
+    }
+    .session-header h4 {
+        width: 500px;
+    }
+    .session-header p{
+        width: 295px;
+        transform: none;
+    }
+    .session-card-main {
+        padding-left:30px;
+    }
+    .focus-scheduler {
+        position: absolute;
+        height: unset;
+    }
+    #newSessionModal {
+        width: unset;
+        height: unset;
+        top: 0px;
+        padding: 28px;
+        padding-bottom: 28px;
+    }
+    .time-display {
+        gap: 20px;
+    }
+    .part2 {
+        margin-top: 17%;
+    }
+    .time-box {
+        transform: translateX(-18px);
+    }
+    #time {
+        gap: 26px;
+    }
+    #day-picker {
+        gap: 15px;
+    }
+    .frequency {
+        margin-top: 19px;
+    }
+    .part3 {
+        flex-direction: row;
+        margin-top: 9%;
+        gap: 45px;
+    }
+    .part3 div {
+        display: row;
+        justify-content: unset;
+    }
+    .part2 .scroll-picker{
+
+        right: 60px;
+
+    }
+    .confirm-picker-btn {
+        transform: translateX(3px) translateY(-20px);
+    }
+    #assignBookList {
+    position: absolute;
+    opacity: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.047);
+    border-radius: 15px;
+    height: 100%;
+    padding: 40px 59px 50px;
+    width: 120vh;
+        padding-right: 59px;
+    padding-left: 59px;
+
+    backdrop-filter: blur(17px);
+    transition: all 0.5s ease-in;
+}
+}
+
