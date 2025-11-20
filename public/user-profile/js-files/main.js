@@ -1814,7 +1814,7 @@ onAuthStateChanged(auth, async (user) => {
     initBooks(userData || {});
 
   } else {
-    window.location.href = "/public/log-in.html";
+    window.location.href = "/public/index.html";
   }
 });
 

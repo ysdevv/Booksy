@@ -75,7 +75,7 @@ onAuthStateChanged(auth, async (user) => {
     }
 
   } else {
-    window.location.href = "/public/log-in.html";
+    window.location.href = "/public/index.html";
   }
 });
 
