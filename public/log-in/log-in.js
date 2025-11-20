@@ -263,7 +263,7 @@ document.getElementById("choice-google").addEventListener("click", async () => {
     } else {
       body.style.filter = 'brightness(0) blur(3px)';
      setTimeout(()=>{
-        window.location.href = '/public/user-profile/user-profile.html';
+        window.location.href = '../user-profile/user-profile.html';
      }, 1800)
     }
 
