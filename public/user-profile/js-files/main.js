@@ -72,6 +72,7 @@ export const LEVELS = [
 ];
 
 export let thisUser;
+
 export async function checkLevelUp(userRef, userData) {
   const xp = userData.progress?.xp || 0;
   let currentLevel = userData.progress?.level || 1;
@@ -97,6 +98,7 @@ export async function checkLevelUp(userRef, userData) {
     showLevelUpPopup(newLevel, newTitle);
   }
 }
+
 function showLevelUpPopup(level, title) {
   const popup = document.createElement("div");
   popup.className = "levelUpPopup";
@@ -138,7 +140,7 @@ if (logOutBtn) {
       sessionStorage.clear();
     } catch (err) {
       console.error("Logout failed:", err);
-      showToast("❌ Failed to log out. Please try again.");
+      showToast("Failed to log out. Please try again.");
     }
   });
 }
@@ -1287,6 +1289,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export let userData;
+
 export function hideAllSections() {
       const allSections = [
         dashboard,
@@ -1318,7 +1321,6 @@ export function hideAllSections() {
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     thisUser = user;
-   
     const userRef = doc(db, "users", user.uid);
     let schedulerInitialized = false;
     const snap = await getDoc(userRef);
@@ -1337,7 +1339,7 @@ onAuthStateChanged(auth, async (user) => {
       
       const data = snap.data();
       if (!data.reachedQuestionnaire) {
-        window.location.href = "/personalization/pers.html";
+        window.location.href = "/public/personalization/pers.html";
         return;
       }
       userData = data;
@@ -1357,7 +1359,7 @@ onAuthStateChanged(auth, async (user) => {
       renderStreakIcons(userData)
       
       await resetDailyIfNeeded(userRef)
-          await resetWeeklyIfNeeded(userRef);
+      await resetWeeklyIfNeeded(userRef);
       if(userData.globalTheme) document.querySelector('.bg').src = `${userData.globalTheme}`
       if (!schedulerInitialized) {
         initScheduler(thisUser, userData);
@@ -1737,6 +1739,7 @@ onAuthStateChanged(auth, async (user) => {
       beginTimer(hasStartedOnce, userData, thisUser);
       hasStartedOnce = true;
     });
+
     function hidePopup() {
       popup.style.opacity = '0';
       focus.style.filter ='blur(0px)';
@@ -1751,6 +1754,7 @@ onAuthStateChanged(auth, async (user) => {
         popup.style.display = 'none';
       }, 150);
     }
+
     const assignBookBtn = document.querySelector('.assignBook');
 
     if (assignBookBtn) {
@@ -1779,6 +1783,7 @@ onAuthStateChanged(auth, async (user) => {
         editFocus.style.opacity = '1';
       }, 350);
     })
+
     closeEditFocus.addEventListener('click', ()=>{
       editFocus.style.opacity = '0';
       focusMain.style.removeProperty = 'filter';
@@ -1789,33 +1794,27 @@ onAuthStateChanged(auth, async (user) => {
     })
     document.querySelectorAll(".edit-categories > div").forEach(btn => {
       btn.addEventListener("click", () => {
-        // update active button
         document.querySelectorAll(".edit-categories > div").forEach(c => c.removeAttribute("id"));
         btn.id = "shown";
 
         const target = btn.getAttribute("data-target");
 
-        // hide all contents
         document.querySelectorAll(".shown-edit-category .category-content")
           .forEach(c => c.style.display = "none");
 
-        // show matching one
         const selectedContent = document.querySelector(`.shown-edit-category [data-category="${target}"]`);
         if (selectedContent) selectedContent.style.display = "block";
       });
     });
 
-    //initTimer(userData || {});
     await resetDailyIfNeeded(userRef);
-    //renderDailyAchievements(userData);
     checkAllDailyComplete(userRef)
-    //renderWeeklyAchievements(userData);
     initAccountSettings(userData);
     initDiscover(userData || {});
     initBooks(userData || {});
 
   } else {
-    window.location.href = "/log-in/log-in.html";
+    window.location.href = "/public/log-in.html";
   }
 });
 

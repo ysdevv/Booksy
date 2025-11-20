@@ -3,17 +3,15 @@ import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
 
-// Initialize Express inside a Cloud Function
 const app = express();
 app.use(cors({ origin: true }));
 
 const MAX_BYTES = 35 * 1024 * 1024;
 
-// Load Google API key from Firebase environment variables
-const GOOGLE_API_KEY = functions.config().google.api_key || "";
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY || "";
+
 const GOOGLE_BOOKS_ENDPOINT = "https://www.googleapis.com/books/v1/volumes";
 
-// =========[ RECS — Your curated book lists ]=========
 const RECS = {
   classics: [
     { title: "Pride and Prejudice", author: "Jane Austen" },
@@ -59,7 +57,6 @@ function sanitize(str = "") {
   return str.replace(/\s+/g, " ").trim();
 }
 
-// =========[ Fetch Google Book Covers ]=========
 async function fetchGoogleCover({ title, author }) {
   const key = cacheKey(title, author);
   if (coverCache.has(key)) return coverCache.get(key);
@@ -67,6 +64,7 @@ async function fetchGoogleCover({ title, author }) {
   const q = encodeURIComponent(
     `intitle:${sanitize(title)} inauthor:${sanitize(author)}`
   );
+
   const url =
     `${GOOGLE_BOOKS_ENDPOINT}?q=${q}&maxResults=1&printType=books` +
     (GOOGLE_API_KEY ? `&key=${GOOGLE_API_KEY}` : "");
@@ -75,10 +73,12 @@ async function fetchGoogleCover({ title, author }) {
     const res = await fetch(url, {
       headers: { "User-Agent": "BooksyApp (+https://example.com)" },
     });
+
     if (!res.ok) {
       coverCache.set(key, null);
       return null;
     }
+
     const json = await res.json();
     const item = json?.items?.[0];
 
@@ -106,7 +106,6 @@ async function enrichBooksWithCovers(books) {
   );
 }
 
-// =========[ Preview Selector ]=========
 function pickPreviewFromGenres(genresArray, enrichedMap, limit = 4) {
   const result = [];
   const buckets = genresArray
@@ -132,7 +131,6 @@ function pickPreviewFromGenres(genresArray, enrichedMap, limit = 4) {
   return result.slice(0, limit);
 }
 
-// ==========[ /api/books ]=========
 app.get("/api/books", async (req, res) => {
   try {
     const genreKeys = Object.keys(RECS);
@@ -175,7 +173,7 @@ app.get("/api/books", async (req, res) => {
   }
 });
 
-// ========[ Internet Archive Text Fetching ]=========
+
 function classifyFiles(files) {
   const text = [];
   const epub = [];
@@ -195,7 +193,6 @@ function classifyFiles(files) {
       pdf.push(f);
     }
   }
-
   return { text, epub, pdf };
 }
 
@@ -205,11 +202,12 @@ async function tryFetchTextOrAlt(identifier, files) {
 
   if (!hasAny) return { kind: "none" };
 
-  // Try plain .txt
+  // Try text
   for (const file of text) {
     const url = `https://archive.org/download/${identifier}/${encodeURIComponent(
       file.name
     )}`;
+
     const resp = await fetch(url, {
       headers: { "User-Agent": "BooksyApp (+https://example.com)" },
     });
@@ -218,7 +216,7 @@ async function tryFetchTextOrAlt(identifier, files) {
       return { kind: "text", stream: resp.body, contentType: "text/plain" };
   }
 
-  // Then EPUB/PDF
+  // Try EPUB/PDF
   for (const list of [epub, pdf]) {
     for (const file of list) {
       const url = `https://archive.org/download/${identifier}/${encodeURIComponent(
@@ -241,7 +239,6 @@ async function tryFetchTextOrAlt(identifier, files) {
       if (head.status === 401 || head.status === 403) {
         return {
           kind: "restricted",
-          message: "This book is borrow-only on Internet Archive.",
           borrowUrl: `https://archive.org/details/${identifier}`,
         };
       }
@@ -251,7 +248,6 @@ async function tryFetchTextOrAlt(identifier, files) {
   return { kind: "none" };
 }
 
-// ===============[ /api/ia/text ]==============
 app.get("/api/ia/text", async (req, res) => {
   const { identifier, title, author } = req.query;
 
@@ -266,25 +262,30 @@ app.get("/api/ia/text", async (req, res) => {
       queryParts.push("language:eng");
 
       const query = encodeURIComponent(queryParts.join(" AND "));
-      const url = `https://archive.org/advancedsearch.php?q=${query}&fl[]=identifier&fl[]=downloads&fl[]=language&rows=20&page=1&output=json`;
 
-      const resp = await fetch(url, {
+      const searchUrl =
+        `https://archive.org/advancedsearch.php?q=${query}` +
+        `&fl[]=identifier&fl[]=downloads&fl[]=language&rows=20&page=1&output=json`;
+
+      const searchResp = await fetch(searchUrl, {
         headers: { "User-Agent": "BooksyApp (+https://example.com)" },
       });
-      if (!resp.ok) return res.status(502).json({ error: "Search failed" });
 
-      const data = await resp.json();
+      if (!searchResp.ok)
+        return res.status(502).json({ error: "Search failed" });
+
+      const data = await searchResp.json();
       const docs = data.response?.docs || [];
 
-      let sorted = docs
+      const sorted = docs
         .filter((d) => d.identifier && d.language?.includes("eng"))
         .sort((a, b) => (b.downloads || 0) - (a.downloads || 0));
 
-      // FIXED: use sorted[0] not [1]
       id = sorted[0]?.identifier || null;
     }
 
-    if (!id) return res.status(404).json({ error: "No identifier found" });
+    if (!id)
+      return res.status(404).json({ error: "No identifier found" });
 
     const metaUrl = `https://archive.org/metadata/${id}`;
     const metaResp = await fetch(metaUrl, {
@@ -319,5 +320,4 @@ app.get("/api/ia/text", async (req, res) => {
   }
 });
 
-// ========= EXPORT EXPRESS APP AS CLOUD FUNCTION =========
 export const api = functions.https.onRequest(app);

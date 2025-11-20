@@ -72,6 +72,7 @@ const logInSection = document.querySelector('.log-in-section');
 const logInContent = logInSection.querySelector('.log-in-content')
 const emailForm = document.getElementById("email-registration-form");
 const emailRegistration = document.getElementById('choice-email');
+
 function welcomeUI(text, user, wid){
    
     next.style.display = 'none';
@@ -118,6 +119,7 @@ function welcomeUI(text, user, wid){
     }, 3000);
     }, 850);
 }
+
 emailForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   
@@ -215,6 +217,7 @@ emailRegistration.addEventListener('click', ()=>{
    
 
 })
+
 document.getElementById("choice-google").addEventListener("click", async () => {
   const provider = new GoogleAuthProvider();
   try {
@@ -260,7 +263,7 @@ document.getElementById("choice-google").addEventListener("click", async () => {
     } else {
       body.style.filter = 'brightness(0) blur(3px)';
      setTimeout(()=>{
-        window.location.href = '/user-profile/user-profile.html';
+        window.location.href = '/public/user-profile/user-profile.html';
      }, 1800)
     }
 
@@ -301,7 +304,6 @@ function downloadFile(filePath, fileName) {
     document.body.removeChild(link);
   }
 
-  // Attach click listeners
   document.getElementById("terms").addEventListener("click", function (event) {
     event.preventDefault();
     console.log('downloading')
@@ -311,7 +313,7 @@ function redirect(){
     if(next.classList.contains('next')){
       body.style.filter = 'brightness(0) blur(3px)';
       setTimeout(()=>{
-        window.location.href = '/personalization/pers.html';
+        window.location.href = '/public/personalization/pers.html';
       }, 1800)
     } else {
       message.style.display = 'none';
@@ -414,6 +416,7 @@ logIn.addEventListener('click', ()=>{
   }
  
 })
+
 forgot.addEventListener('click', ()=>{
   logInSection.style.opacity = '0';
   setTimeout(()=>{
@@ -427,6 +430,7 @@ forgot.addEventListener('click', ()=>{
     header.innerHTML = 'No worries — we’ll help you get back in';
   }, 500)
 })
+
 import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 
 const resetEmailInput = document.getElementById("reset-email");
@@ -466,19 +470,19 @@ document.addEventListener('DOMContentLoaded', () => {
   hidden.addEventListener('click', ()=>{
     if(!visible ){
       password.type = 'text';
-      hidden.src = '/images/log-in-page/visible.png'
+      hidden.src = '/public/images/log-in-page/visible.png'
       visible = true;
     }else{
       password.type = 'password';
-      hidden.src = '/images/log-in-page/hidden.png'
+      hidden.src = '/public/images/log-in-page/hidden.png'
       visible = false;
     }
   })
   button.addEventListener('mouseover', () => {
-    img.src = '/images/log-in-page/google-hovered.png';
+    img.src = '/public/images/log-in-page/google-hovered.png';
   });
 
   button.addEventListener('mouseout', () => {
-    img.src = '/images/log-in-page/google.png';
+    img.src = '/public/images/log-in-page/google.png';
   });
 });

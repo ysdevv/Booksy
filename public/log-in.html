@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/log-in/log-in.css">
+    <link rel="stylesheet" href="./log-in/log-in.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Beth+Ellen&display=swap" rel="stylesheet">
     <title>Booksy. Log in</title>
@@ -11,15 +11,15 @@
 <body>
     
     <img id="welcome-bg" class="bg" src="/background-images/welcome-bg.jpg" alt="">
-    <img id="bg" class="bg" src="/background-images/log-in.jpg" alt="">
+    <img id="bg" class="bg" src="/public/background-images/themes/log-in.jpg" alt="">
     <div class="main-display">
         <h1>Booksy.</h1>
         <div class="log-in-section"> 
             <div class="log-in-content">
                 <h2 class="visible">Where your reading habit lives.</h2>
                 <div class="buttons visible">
-                    <button id="choice-google"><img src="/images/log-in-page/google.png" alt="">Continue with Google</button>
-                    <button id="choice-email"><img class="email" src="/images/log-in-page/email.png" alt="">Continue with Email <svg class="email-continue" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 12-6-6m6 6-6 6m6-6H5"></path></g></svg></button>
+                    <button id="choice-google"><img src="/public/images/log-in-page/google.png" alt="">Continue with Google</button>
+                    <button id="choice-email"><img class="email" src="/public//images/log-in-page/email.png" alt="">Continue with Email <svg class="email-continue" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 12-6-6m6 6-6 6m6-6H5"></path></g></svg></button>
                 </div>
                 <div class="mini-nav">
                     <svg id="back" style="cursor: pointer; width:20px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12L20 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10 6L4.0625 11.9375V11.9375C4.02798 11.972 4.02798 12.028 4.0625 12.0625V12.0625L10 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
@@ -31,9 +31,9 @@
                 <form id="email-registration-form">
                     <input placeholder="Your name" type="text" name="name" id="name" required>
                     <input placeholder="Email address" type="email" id="email" name="email" required />
-                <div class="password ">
-                    <input placeholder="Password" type="password" id="password" name="password" required minlength="6" ><img id="hidden" src="/images/log-in-page/hidden.png" alt=""></input>
-                </div>
+                    <div class="password ">
+                        <input placeholder="Password" type="password" id="password" name="password" required minlength="6" ><img id="hidden" src="/images/log-in-page/hidden.png" alt=""></input>
+                    </div>
                     <button class="register" type="submit">Sign up<svg class="email-continue" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 12-6-6m6 6-6 6m6-6H5"></path></g></svg></button>
                     <p class="forgot">I forgot my password</p>
                 </form>
@@ -55,6 +55,6 @@
             <p class="continue">click anywhere to return</p>
         </div>
     </div>
-    <script defer type="module" src="/log-in/log-in.js"></script>
+    <script defer type="module" src="./log-in/log-in.js"></script>
 </body>
 </html>

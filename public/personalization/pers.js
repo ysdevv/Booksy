@@ -14,7 +14,7 @@ const firebaseConfig = {
   measurementId: "G-S30V4RDX67"
 };
 
-//|Global variables declaration
+//Global variables
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -44,8 +44,6 @@ const focusEnd = document.getElementById('focus-end');
 const part2 = document.querySelector('.part2');
 let userTimeCommitment = '15 min'; 
 const sectionsnav = document.querySelector('.sections');
-
-
 
 onAuthStateChanged(auth, async (user) => {
   if (user) {
@@ -77,11 +75,9 @@ onAuthStateChanged(auth, async (user) => {
     }
 
   } else {
-    window.location.href = "/log-in/log-in.html";
+    window.location.href = "/public/log-in.html";
   }
 });
-
-
 
 function welcomeUI(user) {
   body.style.filter = 'brightness(1)';
@@ -132,7 +128,6 @@ function directToQuestionnaire(user) {
   welcomeScreen.style.display = 'none';
   countdownScreen.style.display = 'none';
   motivatorCont.style.display = 'none';
-  //logo.style.display = 'none';
   background.src = '/background-images/quiz-bg.png';
   background.style.filter = 'blur(0px)';
     
@@ -183,17 +178,17 @@ function startTransitionSequence(user) {
     if (motivatorCont.style.opacity === '1') {
       motivatorCont.style.opacity = '0';
       background.style.opacity = '1';
-      //logo.style.opacity = '0';
+
       questionnaireScreen.style.display = 'flex';
       body.style.filter = 'brightness(0)';
-      await markUserReachedQuestionnaire(user); // Save to Firestore
+      await markUserReachedQuestionnaire(user);
 
       setTimeout(() => {
-        //logo.style.display = 'none';
+
         body.style.filter = 'brightness(1)';
         background.style.opacity = '1';
          
-        background.src = '/background-images/quiz-bg.png';
+        background.src = '/public/background-images/themes/quiz-bg.png';
         background.style.filter = 'blur(0px)';
         setTimeout(() => {
           motivatorCont.style.display = 'none';
@@ -772,7 +767,7 @@ submitQuestionnaire.addEventListener('click', async () => {
 
 
   setTimeout(() => {
-    window.location.href = '/user-profile/user-profile.html';
+    window.location.href = '/public/user-profile/user-profile.html';
   }, 2000);
 
             
