@@ -313,7 +313,7 @@ function redirect(){
     if(next.classList.contains('next')){
       body.style.filter = 'brightness(0) blur(3px)';
       setTimeout(()=>{
-        window.location.href = '/public/personalization/pers.html';
+        window.location.href = '/personalization/pers.html';
       }, 1800)
     } else {
       message.style.display = 'none';
