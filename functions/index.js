@@ -4,7 +4,17 @@ import fetch from "node-fetch";
 import cors from "cors";
 
 const app = express();
-app.use(cors({ origin: true }));
+
+app.use((req, res, next) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  if (req.method === "OPTIONS") {
+    return res.status(204).send('');
+  }
+  next();
+});
+
 
 const MAX_BYTES = 35 * 1024 * 1024;
 
