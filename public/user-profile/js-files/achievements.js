@@ -362,15 +362,11 @@ export async function renderWeeklyAchievements(userData) {
             });
             const updatedSnap = await getDoc(userRef);
             await checkLevelUp(userRef, updatedSnap.data());
-            showRewardPopup({
-              icon: "🌟",
-              title: "Weekly Achievement Complete!",
-              message: `You finished: ${niceNameFor(key)}`,
-              rewardText: `+${xpValue} Knowledge Orbs`
-            });
-
             btn.remove();
-            rewardDiv.appendChild(document.createElement("p")).textContent = "✅";
+            rewardDiv.style.flexDirection = 'row';
+            let progressP = document.createElement("p");
+            rewardDiv.appendChild(progressP);
+            progressP.textContent = "✅";
             progressP.style.fontSize = '20px'
             progressP.style.opacity = '1';
             progressP.style.transform = 'translateX(-8px)';
