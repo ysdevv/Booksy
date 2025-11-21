@@ -4,6 +4,7 @@ import fetch from "node-fetch";
 import cors from "cors";
 
 const app = express();
+app.use(cors({ origin: true }));
 
 app.use((req, res, next) => {
   res.set("Access-Control-Allow-Origin", "*");
