@@ -103,9 +103,9 @@ async function loadBookIntoReader(bookRef) {
 
   let url;
   if (typeof bookRef === "string") {
-    url = `http://localhost:3000/api/ia/text?identifier=${encodeURIComponent(bookRef)}`;
+    url = `https://booksy-app-a2c22.firebaseapp.com/api/ia/text?identifier=${encodeURIComponent(bookRef)}`;
   } else {
-    url = `http://localhost:3000/api/ia/text?title=${encodeURIComponent(
+    url = `https://booksy-app-a2c22.firebaseapp.com/api/ia/text?title=${encodeURIComponent(
       bookRef.title
     )}&author=${encodeURIComponent(bookRef.author)}`;
   }
@@ -113,7 +113,7 @@ async function loadBookIntoReader(bookRef) {
   try {
     const res = await fetch(url);
     const ct = res.headers.get("content-type") || "";
-    //console.log("Backend responded with Content-Type:", ct, "Status:", res.status);
+    
     if (ct.startsWith("text/plain")) {
       const text = await res.text();
       switchModeSection.style.opacity = "1";
@@ -231,8 +231,7 @@ async function loadImportedBookIntoReader(book, text) {
   switchModeSection.style.opacity = "1";
   readerNav.style.display = "flex";
 
-  // 1️⃣ Paginate text
-  paginateText(text); // sets pages[] and currentPage = 0
+  paginateText(text); 
 
   const user = auth.currentUser;
   if (!user) return;
@@ -246,7 +245,7 @@ async function loadImportedBookIntoReader(book, text) {
   const existing = (data.library || []).find(b => b.id === book.id);
 
   if (existing) {
-    // 2️⃣ Save totalPages if not saved or changed
+
     if (!existing.totalPages || existing.totalPages !== pages.length) {
       await updateDoc(userRef, {
         library: data.library.map(b =>
@@ -255,7 +254,6 @@ async function loadImportedBookIntoReader(book, text) {
       });
     }
 
-    // 3️⃣ Restore last saved page
     if (existing.currentPage > 0 && existing.currentPage < pages.length) {
       currentPage = existing.currentPage;
       renderPage();
@@ -945,6 +943,7 @@ async function fetchRecommendedFromBackend(preferred = []) {
   if (!res.ok) throw new Error("Failed to fetch recommendations");
   return res.json();
 }
+
 function renderPreviewBooks(preview, userData) {
   const container = document.querySelector(".booksPreview");
   if (!container) return;
@@ -960,6 +959,7 @@ function renderPreviewBooks(preview, userData) {
     container.appendChild(createBookCard(book, userData));
   });
 }
+
 function renderAllBooks(genresMap, userData) {
   const container = document.querySelector(".allBooks");
   if (!container) return;
@@ -972,6 +972,7 @@ function renderAllBooks(genresMap, userData) {
     books.forEach(book => container.appendChild(createBookCard(book, userData)));
   }
 }
+
 function initGenresNav(genresMap) {
   const nav = document.querySelector("#genres");
   const container = document.querySelector(".allBooks");
@@ -1495,7 +1496,7 @@ export function renderLibBooks(books, userRef) {
                       const defaultTitle = file.name.replace(/\.[^/.]+$/, '');
                       const defaultAuthor = "Unknown Author";
 
-                      // Estimate pages only for preview (don’t extract EPUB yet)
+                      
                       let textPreview = "";
                       try {
                         if (ext === "txt") {
@@ -1561,10 +1562,10 @@ export function renderLibBooks(books, userRef) {
                         addBook.style.display = 'block';
                         addBookSection.style.opacity = '0';
                         setTimeout(() => {
-                          showLib.style.filter = 'blur(0px)';
+
                           showLib.style.opacity = '1';
                           showLib.style.position = 'relative';
-                          noLib.style.filter = 'blur(0px)';
+
                           showLib.style.zIndex = '1';
                           document.querySelector('.libraryh2').style.zIndex = '1';
                           document.querySelector('.libraryh2').style.filter = 'blur(0px)';
@@ -1577,31 +1578,22 @@ export function renderLibBooks(books, userRef) {
                         const title = modal.querySelector("#importTitle").value.trim() || defaultTitle;
                         const author = modal.querySelector("#importAuthor").value.trim() || defaultAuthor;
                         const total = parseInt(modal.querySelector("#importTotal").value, 10) || totalPages;
-
-              
-
-                        // Create unique ID for the book and store the raw file in IndexedDB
                         const bookId = `${title}-${Date.now()}`;
                         await saveImportedBook(bookId, file);
-
-                      
-                        // Use a safe placeholder if no cover chosen
                         let cover = "";
                         const coverFile = modal.querySelector("#importCover").files[0];
                         if (coverFile) {
                           cover = URL.createObjectURL(coverFile);
                         }
 
-                        // Ensure id is defined and all required fields have values
                         const bookMeta = {
                           id: bookId || `${title}-${Date.now()}`,
                           title: title || "Untitled",
                           author: author || "Unknown Author",
-                          cover: cover || "",         // empty string instead of undefined
+                          cover: cover || "",   
                           fileType: ext || "epub",
                         };
 
-                        // Provide a valid totalPages number
                         const safeTotalPages = Number.isFinite(total) && total > 0 ? total : 1;
 
                         try {

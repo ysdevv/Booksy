@@ -21,7 +21,6 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-
 provider.setCustomParameters({
   prompt: "select_account",   
 
@@ -119,18 +118,17 @@ function renderReadingGoal(uData) {
       }
       if (phraseEl) phraseEl.innerHTML = phrase;
 }
+
 function renderLevelUI(uData) {
       const lvl = uData.progress?.level ?? 1;
       const xp = uData.progress?.xp ?? 0;
 
-      // Use LEVELS config we defined
       const currentMeta = LEVELS[lvl - 1] || LEVELS[0];
-      const nextMeta = LEVELS[lvl] || null; // next level, if exists
+      const nextMeta = LEVELS[lvl] || null; 
 
-      const needed = nextMeta ? nextMeta.xp : currentMeta.xp; // cap at last level
+      const needed = nextMeta ? nextMeta.xp : currentMeta.xp; 
       const title = currentMeta.title;
 
-      // Header display
       const header = document.querySelector('.user-info');
       if(width>=768) {
         header.innerHTML = `Welcome, ${thisUser.displayName || "Reader"}! <span>|</span> Level ${lvl} - ${title}`;
@@ -138,19 +136,15 @@ function renderLevelUI(uData) {
         header.innerHTML = `Welcome, ${thisUser.displayName || "Reader"}! Lvl ${lvl} - ${title}`;
       }
       
-
-      // XP progress text
       const xpCountEl = document.querySelector('.xp-count');
       if (xpCountEl) {
         if (nextMeta) {
           xpCountEl.textContent = `${xp} / ${needed} 🔮`;
         } else {
-          // max level
           xpCountEl.textContent = `${xp} 🔮 (MAX Level)`;
         }
       }
 
-      // Progress bar animation
       const xpFill = document.querySelector('.xp-fill');
       let percent = 100;
       if (nextMeta) {
@@ -174,22 +168,23 @@ function renderLevelUI(uData) {
         sessionStorage.setItem("lastXpPercent", percent.toFixed(2));
       });
 }
+
 async function extractEpubTextWithJSZip(buffer) {
-                      const zip = await JSZip.loadAsync(buffer);
-                      let allText = "";
-                      for (const filename of Object.keys(zip.files)) {
-                        if (/\.(xhtml|html)$/i.test(filename)) {
-                          try {
-                            const content = await zip.files[filename].async("string");
-                            const tmp = document.createElement("div");
-                            tmp.innerHTML = content;
-                            allText += (tmp.textContent || "").trim() + "\n\n";
-                          } catch (err) {
-                            console.warn("Failed to read", filename, err);
-                          }
-                        }
-                      }
-                      return allText;
+  const zip = await JSZip.loadAsync(buffer);
+  let allText = "";
+  for (const filename of Object.keys(zip.files)) {
+    if (/\.(xhtml|html)$/i.test(filename)) {
+      try {
+        const content = await zip.files[filename].async("string");
+        const tmp = document.createElement("div");
+        tmp.innerHTML = content;
+        allText += (tmp.textContent || "").trim() + "\n\n";
+      } catch (err) {
+        console.warn("Failed to read", filename, err);
+      }
+    }
+  }
+  return allText;
 }
 
 function renderCurrentBook(uData) {
@@ -301,6 +296,7 @@ function renderCurrentBook(uData) {
       }
 }
 const articleReader = document.querySelector('.articleReader');
+
 function renderDailyArticle(uData) {
       const articleCard = document.querySelector('.daily-article-card');
       let article;
