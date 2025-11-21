@@ -1051,7 +1051,7 @@ seeAllBooksBtn.addEventListener('click', ()=>{
  }
 })
 
-export function renderLibBooks(books, userRef) {
+export function renderLibBooks(books, userRef, uData) {
 
   let activeFilter = "all";
           showLib.querySelectorAll(".year-section").forEach(el => el.remove());
@@ -1458,6 +1458,7 @@ export function renderLibBooks(books, userRef) {
                                         focusMode.style.opacity = '1';
                                       }, 200);
                                     }, 200)
+                                    console.log('here')
                     assignBookToSession(book);
                     setTimeout(() => {
                       //runFocusAnimation();

@@ -1604,7 +1604,7 @@ onAuthStateChanged(auth, async (user) => {
         const libraryNav = showLib.querySelector(".library-nav");
 
 
-        renderLibBooks(userData.library, userRef);
+        renderLibBooks(userData.library, userRef, userData);
 
         function setActive(el) {
           libraryNav.querySelectorAll("p").forEach(p => p.removeAttribute("id"));
