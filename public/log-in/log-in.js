@@ -302,7 +302,7 @@ function downloadFile(filePath, fileName) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  }
+}
 
   document.getElementById("terms").addEventListener("click", function (event) {
     event.preventDefault();
@@ -470,19 +470,19 @@ document.addEventListener('DOMContentLoaded', () => {
   hidden.addEventListener('click', ()=>{
     if(!visible ){
       password.type = 'text';
-      hidden.src = '/public/images/log-in-page/visible.png'
+      hidden.src = '/images/log-in-page/visible.png'
       visible = true;
     }else{
       password.type = 'password';
-      hidden.src = '/public/images/log-in-page/hidden.png'
+      hidden.src = '/images/log-in-page/hidden.png'
       visible = false;
     }
   })
   button.addEventListener('mouseover', () => {
-    img.src = '/public/images/log-in-page/google-hovered.png';
+    img.src = '/images/log-in-page/google-hovered.png';
   });
 
   button.addEventListener('mouseout', () => {
-    img.src = '/public/images/log-in-page/google.png';
+    img.src = '/images/log-in-page/google.png';
   });
 });
