@@ -142,7 +142,7 @@ function pickPreviewFromGenres(genresArray, enrichedMap, limit = 4) {
   return result.slice(0, limit);
 }
 
-app.get("/api/books", async (req, res) => {
+app.get("/books", async (req, res) => {
   try {
     const genreKeys = Object.keys(RECS);
 
@@ -259,7 +259,7 @@ async function tryFetchTextOrAlt(identifier, files) {
   return { kind: "none" };
 }
 
-app.get("/api/ia/text", async (req, res) => {
+app.get("/ia/text", async (req, res) => {
   const { identifier, title, author } = req.query;
 
   try {
