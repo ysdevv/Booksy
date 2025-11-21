@@ -241,6 +241,7 @@
 .aboutBookSection{
   position: fixed;
   padding: 30px;
+  height: 100%;
   padding-top: 45px;
   top: 0;
   color: white;

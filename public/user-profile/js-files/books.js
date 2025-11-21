@@ -1051,7 +1051,7 @@ seeAllBooksBtn.addEventListener('click', ()=>{
  }
 })
 
-export function renderLibBooks(books, userRef, uData) {
+export function renderLibBooks(books, userRef, uData, thisUser) {
 
   let activeFilter = "all";
           showLib.querySelectorAll(".year-section").forEach(el => el.remove());
@@ -1426,11 +1426,7 @@ export function renderLibBooks(books, userRef, uData) {
                        try {
                                       const userRef = doc(db, "users", auth.currentUser.uid);
                                       const defaultCommit = (uData && uData.unplannedSession && uData.unplannedSession.timeCommitment) || "15 min";
-                      
-                                      await updateDoc(userRef, {
-                                        "unplannedSession.assignedBook": currentBook,
-                                        "unplannedSession.timeCommitment": defaultCommit
-                                      });
+                    
                       
                                       const focusEl = document.querySelector('.focusSection');
                                       if (focusEl) focusEl.dispatchEvent(new Event('click'));
