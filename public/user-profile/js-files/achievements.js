@@ -566,7 +566,6 @@ export async function checkAllDailyComplete(userRef) {
       const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       const dayName = days[today.getDay()];
       newStreakDays.push(dayName)
-      console.log(dayName);
 
       await updateDoc(userRef, {
         "achievements.daily.streakClaimed": true,

@@ -273,8 +273,8 @@ function renderCurrentBook(uData) {
                   focusMode.style.opacity = '1';
                 }, 200);
               }, 200);
-  return;
-}
+              return;
+            }
 
             if(currentBook.source ==="imported") {
               

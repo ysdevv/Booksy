@@ -1265,8 +1265,6 @@ export function renderLibBooks(books, userRef) {
                   bookMenu.style.opacity = '1';
                   bookDiv.style.backdropFilter = 'none';
                   bookDiv.style.removeProperty('backdropFilter');
-                  console.log(bookDiv)
-                  console.log(bookDiv.style.backdropFilter)
                 });
                 bookDiv.querySelector('.close-menu').addEventListener('click', e => {
                   e.stopPropagation();
@@ -1424,7 +1422,42 @@ export function renderLibBooks(books, userRef) {
                   }
                   
                   if(book.source === 'offline') {
-                    bookDiv.addEventListener("click", () => {
+                    bookDiv.addEventListener("click", async () => {
+                       try {
+                                      const userRef = doc(db, "users", auth.currentUser.uid);
+                                      const defaultCommit = (uData && uData.unplannedSession && uData.unplannedSession.timeCommitment) || "15 min";
+                      
+                                      await updateDoc(userRef, {
+                                        "unplannedSession.assignedBook": currentBook,
+                                        "unplannedSession.timeCommitment": defaultCommit
+                                      });
+                      
+                                      const focusEl = document.querySelector('.focusSection');
+                                      if (focusEl) focusEl.dispatchEvent(new Event('click'));
+                      
+                                      setTimeout(() => {
+                                        const startEl = document.querySelector('.start');
+                                        if (startEl) startEl.dispatchEvent(new Event('click'));
+                                      }, 300);
+                      
+                                    } catch (err) {
+                                      console.error("Error launching offline book as unplanned session:", err);
+                                    }
+                                    smallerNavBar('focus');
+                                    hideAllSections();
+                        
+                                    setTimeout(() => {
+                                      focusMode.style.display = 'block';
+                                      if(width>=768) {
+                                        smallerNavSection.style.display = 'none';
+                                        nav.forEach(nav => nav.style.gap = '15px');
+                                          navs.style.gap = '15px';
+                                          miniNav.style.gap = '15px';
+                                      }
+                                      setTimeout(() => {
+                                        focusMode.style.opacity = '1';
+                                      }, 200);
+                                    }, 200)
                     assignBookToSession(book);
                     setTimeout(() => {
                       //runFocusAnimation();
@@ -1442,6 +1475,7 @@ export function renderLibBooks(books, userRef) {
                         focusMode.style.opacity = '1';
                       }, 350);
                     }, 350);
+                    
                   });
 
                     return;

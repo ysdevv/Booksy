@@ -222,7 +222,6 @@ async function beginTimer(hasStartedOnce, userData, thisUser) {
       clearInterval(timerInterval);
       startBtn.textContent = "Start";
       hasStartedOnce = false; 
-      console.log("Focus mode disabled.");
       resetTimer(userData)
       showSessionComplete(userData,thisUser,hasStartedOnce, 70);
       
@@ -348,10 +347,10 @@ async function showSessionComplete(userData, thisUser, hasStartedOnce, gainedXP 
     } else {
       totalMinutes = Math.floor(((h || 0) * 3600 + m * 60 + s) / 60);
     }
-    console.log(totalMinutes)
+
     const newXP = (userData.progress?.xp || 0) + gainedXP;
     if(userData.achievements.daily.sessionComplete==='claimed') {
-      console.log('it was claimed')
+
       updateDoc(userRef, {
       "progress.xp": newXP,
       "progress.focusSessions": (userData.progress?.focusSessions || 0) + totalMinutes,
@@ -364,7 +363,7 @@ async function showSessionComplete(userData, thisUser, hasStartedOnce, gainedXP 
       "achievements.daily.sessionComplete": true,
       "achievements.weekly.focusTime": (userData.achievements?.weekly?.focusTime || 0) + totalMinutes
     }).then(() => {
-      console.log(`Session complete: +${gainedXP}xp, +${totalMinutes}min focus time`);
+      //console.log(`Session complete: +${gainedXP}xp, +${totalMinutes}min focus time`);
     });
     await checkLevelUp(userRef, userData);
     }
