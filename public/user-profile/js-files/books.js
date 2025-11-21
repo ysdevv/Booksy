@@ -103,9 +103,9 @@ async function loadBookIntoReader(bookRef) {
 
   let url;
   if (typeof bookRef === "string") {
-    url = `https://booksy-app-a2c22.firebaseapp.com/api/ia/text?identifier=${encodeURIComponent(bookRef)}`;
+    url = `https://us-central1-booksy-app-a2c22.cloudfunctions.net/api/ia/text?identifier=${encodeURIComponent(bookRef)}`;
   } else {
-    url = `https://booksy-app-a2c22.firebaseapp.com/api/ia/text?title=${encodeURIComponent(
+    url = `https://us-central1-booksy-app-a2c22.cloudfunctions.net/api/ia/text?title=${encodeURIComponent(
       bookRef.title
     )}&author=${encodeURIComponent(bookRef.author)}`;
   }
@@ -938,7 +938,7 @@ async function fetchRecommendedFromBackend(preferred = []) {
  const qs = preferred.length
     ? `?preferred=${encodeURIComponent(preferred.join(","))}`
     : "";
-  const res = await fetch(`https://booksy-app-a2c22.firebaseapp.com/api/books${qs}`);
+  const res = await fetch(`https://us-central1-booksy-app-a2c22.cloudfunctions.net/api/books${qs}`);
   
   if (!res.ok) throw new Error("Failed to fetch recommendations");
   return res.json();
