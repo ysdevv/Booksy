@@ -1,7 +1,7 @@
 
 import { db, auth } from "./firebase.js";
 import { doc, getDoc, updateDoc, arrayUnion, arrayRemove, increment } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { smallerNavBar, normalNavBar, initialized, userData, width, getImportedBook } from "./main.js";
+import { smallerNavBar, normalNavBar, initialized, userData, width, getImportedBook, hideAllSections } from "./main.js";
 export { initBooks, loadBookIntoReader, calculateGlobalProgress, renderBooks, renderOfflineBooks, loadImportedBookIntoReader, addBookToLibrary, updateReadingProgress };
 
 const welcomeLogo = document.querySelector('.welcome-logo');
