@@ -940,7 +940,7 @@ async function fetchRecommendedFromBackend(preferred = []) {
  const qs = preferred.length
     ? `?preferred=${encodeURIComponent(preferred.join(","))}`
     : "";
-  const res = await fetch(`http://localhost:3000/api/books${qs}`);
+  const res = await fetch(`https://booksy-app-a2c22.firebaseapp.com/api/books${qs}`);
   
   if (!res.ok) throw new Error("Failed to fetch recommendations");
   return res.json();
