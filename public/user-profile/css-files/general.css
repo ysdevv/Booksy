@@ -92,7 +92,7 @@ input:focus {
   padding: 0;
   padding-top: 0px;
   padding-right: 18px;
-  padding-left: 25px;
+  padding-left: 18px;
   background-color: #0000002b;
   backdrop-filter: blur(32px);
   transition: all 0.77s ease;
@@ -135,7 +135,7 @@ input:focus {
   font-weight: 300;
   background-color: rgba(0, 0, 0, 0.028);
   box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.25);
-  padding: 103px 5px 18px 20px;
+  padding: 107px 5px 18px 20px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.982);
   transition: all 0.4s ease;
@@ -223,7 +223,7 @@ input:focus {
   background-color: #00000001;
   box-shadow: 0px 1px 19px rgba(0, 0, 0, 0.2);
 
-  padding: 30px 33px;
+  padding: 30px 40px;
 }
 .mini-nav div {
   opacity: 0;
