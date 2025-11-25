@@ -65,16 +65,16 @@ export function showToast(message) {
       bg.style.filter = 'brightness(0.74)';
       navBar.style.removeProperty('filter');
       content.style.removeProperty('filter');
-      if(reader.style.opacity ==='0.35'){
+
         reader.style.opacity = '1';
         reader.style.filter = 'blur(0px)';
         reader.style.removeProperty('filter');
-      }
-      if(articleReader.style.opacity==='0.35'){
+      
+
         articleReader.style.opacity = '1';
         articleReader.style.filter = 'blur(0px)';
         articleReader.style.removeProperty('filter');
-      }
+      
       setTimeout(() => {
         showStars.style.opacity = "1";
       }, 4000);
