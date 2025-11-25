@@ -67,10 +67,12 @@ export function showToast(message) {
       content.style.removeProperty('filter');
       if(reader.style.opacity ==='0.35'){
         reader.style.opacity = '1';
+        reader.style.filter = 'blur(0px)';
         reader.style.removeProperty('filter');
       }
       if(articleReader.style.opacity==='0.35'){
         articleReader.style.opacity = '1';
+        articleReader.style.filter = 'blur(0px)';
         articleReader.style.removeProperty('filter');
       }
       setTimeout(() => {

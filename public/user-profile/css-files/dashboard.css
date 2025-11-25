@@ -221,7 +221,8 @@ h5{
   cx: 68;
   cy: 80;
   fill: none;
-  stroke: #ffffff20;
+  opacity: 0.1;
+  stroke: white;
   stroke-width: 11;
 }
 .progress-ring__circle {
