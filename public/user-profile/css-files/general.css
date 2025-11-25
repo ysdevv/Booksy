@@ -101,7 +101,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  width: 97%;
+  
   transition: opacity 0.5s ease;
 }
 .wholeNav  {
@@ -130,7 +130,7 @@ input:focus {
   position: relative;
   display: flex;
   font-size: 18.5px;
-  width: 132px;
+  width: 40%;
   border-radius: 22px;
   font-weight: 300;
   background-color: rgba(0, 0, 0, 0.028);

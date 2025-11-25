@@ -890,6 +890,7 @@ ul::-webkit-outer-spin-button {
 .shown-edit-category {
     overflow: scroll;
     width: 100%;
+    padding-left: 18px;
     padding-right: 10px;
 }
 *::-webkit-scrollbar {
