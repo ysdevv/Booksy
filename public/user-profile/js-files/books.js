@@ -1001,6 +1001,7 @@ function initGenresNav(genresMap) {
     }
   });
 }
+
 async function initCuratedBooks(preferredGenres, userData) {
   try {
     const data = await fetchRecommendedFromBackend(preferredGenres); 
@@ -1011,6 +1012,7 @@ async function initCuratedBooks(preferredGenres, userData) {
     console.error("Failed to init curated books:", err);
   }
 }
+
 function initBooks(userData) {
   initCuratedBooks(userData?.preferredGenres || [], userData);
 }

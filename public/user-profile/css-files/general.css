@@ -87,12 +87,12 @@ input:focus {
   z-index: 3;
   opacity: 0;
   top: 0;
-
+  width: 90%;
   height: 100vh;
   padding: 0;
   padding-top: 0px;
   padding-right: 18px;
-  padding-left: 15px;
+  padding-left: 25px;
   background-color: #0000002b;
   backdrop-filter: blur(32px);
   transition: all 0.77s ease;
@@ -101,6 +101,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  width: 97%;
   transition: opacity 0.5s ease;
 }
 .wholeNav  {
@@ -398,7 +399,7 @@ input:focus {
 
 .reader {
   opacity: 0;
-  font-size: 18px;
+  font-size: 19.5px;
   font-weight: 300;
   display: flex;
   color: black;

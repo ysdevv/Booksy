@@ -62,7 +62,7 @@ h2 {
     margin-bottom: 10px;
     font-weight: 500;
     line-height: 1;
-    width: 80%;
+    width: 100%;
     font-size: 42px;
     background: linear-gradient(to right, #fff 60%, rgba(216, 216, 216, 0.832) 100%);
     -webkit-background-clip: text;
@@ -97,6 +97,7 @@ a{
     width: 100%;
     object-fit:cover;
     position: fixed;
+    filter: brightness(0.8);
     z-index: -30000000;
     transition: all 0.5s ease;
 }

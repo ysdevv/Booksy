@@ -47,6 +47,9 @@ export function showToast(message) {
 
       toast.style.color = 'black';
       reader.style.filter = 'blur(5px)';
+    } else {
+       toast.style.color = 'white';
+      reader.style.filter = 'blur(5px)';
     }
     if(articleReader.style.opacity==='1'){
       articleReader.style.opacity = '0.35';

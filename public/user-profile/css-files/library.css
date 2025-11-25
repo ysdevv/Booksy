@@ -98,7 +98,7 @@
     transition: all 0.5s ease;
     gap: 20px;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(22px);
     transition: all 0.6s ease-in;
 }
  .bookResult:hover{
@@ -173,7 +173,7 @@
     gap: 16px;
     background-color: rgba(0, 0, 0, 0.081);
     box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(17px);
     top: 8px;
     right: 0;
     z-index: 0;
@@ -246,7 +246,7 @@
     background-color: rgba(0, 0, 0, 0.051);
     box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.27);
     border-radius: 14px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(30px);
 }
 .addMain {
     display: flex;
@@ -256,6 +256,7 @@
 }
 .addBookSection h2 {
     margin-top: 0px;
+    font-size: 30px;
     margin-bottom: 0px;
 }
 .options {
@@ -325,6 +326,7 @@
     transition: opacity 0.5s ease-in;
 }
 .addOfflineSection h2 {
+    font-size: 28px;
     margin-top: 5px;
     transform: translateY(-38px) translateX(20px);
 }
@@ -339,6 +341,7 @@
 .librarySearch {
     transform: translateX(-32px);
     border: none;
+    width: 100%;
     padding: 18px 18px;
     padding-left: 52px;
     border-radius: 12px;

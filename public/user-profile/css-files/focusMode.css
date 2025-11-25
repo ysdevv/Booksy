@@ -279,12 +279,11 @@ width: 100%;
     align-items: center;
     padding: 25px;
     height: 165px;
-    width: 300px;
     gap: 18px;
     background-color: rgba(0, 0, 0, 0.046);
     box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(17px);
 }
 .schedule h2 {
     margin-left: 75px;
@@ -304,18 +303,17 @@ width: 100%;
     background-color: rgba(0, 0, 0, 0.046);
     box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(19px);
     transition: opacity 0.5s ease-in;
 }
 .session-card-main {
-    width: 320px;
+
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 35px 30px;
-    padding-left: 10px;
+    padding: 35px 10px;
     height: 165px;
     transition: all 0.5s ease-in;
 }
@@ -385,7 +383,7 @@ width: 100%;
 }
 .session-meta {
     display: flex;
-    gap: 30px;
+    gap: 37px;
 }
 .session-days {
     transform: translateY(-4px);
@@ -406,7 +404,7 @@ width: 100%;
 .session-days {
     display: flex;
     justify-content: center;
-    gap: 9.5px;
+    gap: 14.5px;
 }
 .session-days span{
     padding: 8px 14.5px;

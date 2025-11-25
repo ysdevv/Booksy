@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   margin-left: 65px;
+  width: 100%;
 }
 .discoverSearch {
   color: white;
@@ -16,7 +17,7 @@
   backdrop-filter: blur(15px);
   border: none;
   font-family: Outfit;
-  width: 220px;
+  width: 100%;
   border-radius: 13px;
   padding-left: 65px;
   height: 60px;
@@ -175,6 +176,7 @@
 .book {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: 8px;
   width:145px;
 
@@ -214,6 +216,13 @@
   display: flex;
   justify-content:space-between;
   gap: 11px;
+
+}
+.aboutBookSection .bookActions {
+  margin-top: 40px;
+}
+.aboutBookSection .bookActions p {
+  font-size: 16.5px;
 }
 .bookActions p {
   cursor: pointer;
@@ -241,8 +250,8 @@
 .aboutBookSection{
   position: fixed;
   padding: 30px;
-  height: 100%;
-  padding-top: 45px;
+  height: 100vh;
+  padding-top: 78px;
   top: 0;
   color: white;
   text-align: center;
