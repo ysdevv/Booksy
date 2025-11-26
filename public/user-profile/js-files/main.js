@@ -1458,7 +1458,7 @@ onAuthStateChanged(auth, async (user) => {
           if(target!=='discover'){
             bg.style.filter = 'brightness(0.74)';
             mainDisplay.style.backdropFilter='blur(0px)';
-            mainDisplay.style.removeProperty('backdropFilter');
+            mainDisplay.style.removeProperty('backdrop-filter');
           }
           
         });
