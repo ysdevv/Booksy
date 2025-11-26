@@ -129,7 +129,7 @@ function directToQuestionnaire(user) {
   countdownScreen.style.display = 'none';
   motivatorCont.style.display = 'none';
   background.src = '/background-images/themes/quiz-bg.png';
-  background.style.filter = 'blur(0px)';
+  background.style.filter = 'blur(0px) brightness(0.78)';
     
   questionnaireScreen.style.opacity = '1';
   setTimeout((questionnaireScreen.style.display = 'flex'), 200);

@@ -810,6 +810,7 @@ async function showAboutBook(book) {
           setTimeout(() => (aboutBookSection.style.display = "none"), 300);
         });
 }
+
 function createBookCard(book, userData) {
   const maxLength = 20;
   const shortTitle = book.title.length > maxLength
@@ -1067,6 +1068,7 @@ export function renderLibBooks(books, userRef, uData, thisUser) {
           showLib.querySelectorAll(".year-section").forEach(el => el.remove());
           const emptySection = document.querySelector('.empty-section');
           if(emptySection) showLib.removeChild(emptySection);
+          console.log(activeFilter)
           if (!books.length) {
             const emptyDiv = document.createElement("div");
             emptyDiv.classList.add("empty-section");

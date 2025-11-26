@@ -55,7 +55,7 @@ export function showToast(message) {
       articleReader.style.opacity = '0.35';
       articleReader.style.filter = 'blur(5px)';
     }
-  }, 1680);
+  }, 1280);
    setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => {
