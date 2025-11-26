@@ -848,7 +848,7 @@ function createBookCard(book, userData) {
         mainDisplay.style.gap = '8px';
         setTimeout(() => {
             aboutBookSection.style.opacity = "1";
-        }, 100);});
+        }, 100); console.log('showing')});
 
   bookEl.querySelector(".readBook").addEventListener("click", () => {
     loadBookIntoReader({ title: book.title, author: book.author, cover: book.cover});
