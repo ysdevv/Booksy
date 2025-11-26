@@ -1421,7 +1421,7 @@ onAuthStateChanged(auth, async (user) => {
               discover.style.display = 'block';
               mainDisplay.style.gap = '40px';
               //initDiscover(userData || {});
-              bg.style.filter = 'brightness(0.7) blur(20px)';
+              mainDisplay.style.backdropFilter='blur(20px)';
               setTimeout(() => {
                 discover.style.opacity = '1';
               }, 200);
@@ -1457,6 +1457,8 @@ onAuthStateChanged(auth, async (user) => {
           }
           if(target!=='discover'){
             bg.style.filter = 'brightness(0.74)';
+            mainDisplay.style.backdropFilter='blur(0px)';
+            mainDisplay.style.removeProperty('backdropFilter');
           }
           
         });

@@ -801,6 +801,7 @@ async function showAboutBook(book) {
       aboutBookSection
         .querySelector(".closeAbout")
         .addEventListener("click", () => {
+          aboutBookSection.innerHTML ='';
           aboutBookOpen = false;
           normalNavBar();
           aboutBookSection.style.opacity = "0";
