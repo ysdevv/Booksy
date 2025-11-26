@@ -51,7 +51,7 @@ onAuthStateChanged(auth, async (user) => {
 
     const userRef = doc(db, "users", user.uid);
     const userSnap = await getDoc(userRef);
-    console.log(userSnap.data())
+
     if (userSnap.exists() && userSnap.data().reachedQuestionnaire) {
       directToQuestionnaire(user);
     } else {
@@ -75,7 +75,7 @@ onAuthStateChanged(auth, async (user) => {
     }
 
   } else {
-    window.location.href = "/public/index.html";
+    window.location.href = "/index.html";
   }
 });
 
@@ -128,7 +128,7 @@ function directToQuestionnaire(user) {
   welcomeScreen.style.display = 'none';
   countdownScreen.style.display = 'none';
   motivatorCont.style.display = 'none';
-  background.src = '/background-images/quiz-bg.png';
+  background.src = '/background-images/themes/quiz-bg.png';
   background.style.filter = 'blur(0px)';
     
   questionnaireScreen.style.opacity = '1';
@@ -188,7 +188,7 @@ function startTransitionSequence(user) {
         body.style.filter = 'brightness(1)';
         background.style.opacity = '1';
          
-        background.src = '/public/background-images/themes/quiz-bg.png';
+        background.src = '/background-images/themes/quiz-bg.png';
         background.style.filter = 'blur(0px)';
         setTimeout(() => {
           motivatorCont.style.display = 'none';
@@ -767,7 +767,7 @@ submitQuestionnaire.addEventListener('click', async () => {
 
 
   setTimeout(() => {
-    window.location.href = '/public/user-profile/user-profile.html';
+    window.location.href = '/user-profile/user-profile.html';
   }, 2000);
 
             

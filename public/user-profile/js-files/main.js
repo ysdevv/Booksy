@@ -138,6 +138,7 @@ if (logOutBtn) {
     try {
       await signOut(auth);
       sessionStorage.clear();
+      window.location.href = "/index.html";
     } catch (err) {
       console.error("Logout failed:", err);
       showToast("Failed to log out. Please try again.");
@@ -1814,7 +1815,7 @@ onAuthStateChanged(auth, async (user) => {
     initBooks(userData || {});
 
   } else {
-    window.location.href = "/public/index.html";
+    window.location.href = "/index.html";
   }
 });
 
