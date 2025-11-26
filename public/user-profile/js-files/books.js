@@ -1064,13 +1064,15 @@ seeAllBooksBtn.addEventListener('click', ()=>{
 
 export function renderLibBooks(books, userRef, uData, thisUser) {
 
-  let activeFilter = document.getElementById('set');
+  
           showLib.querySelectorAll(".year-section").forEach(el => el.remove());
           const emptySection = document.querySelector('.empty-section');
           if(emptySection) showLib.removeChild(emptySection);
-          console.log(activeFilter)
+          
           if (!books.length) {
+            let activeFilter = document.getElementById('set');
             const emptyDiv = document.createElement("div");
+            console.log(activeFilter)
             emptyDiv.classList.add("empty-section");
             if (activeFilter.className==="all") {
               emptyDiv.innerHTML = `<p style="opacity:.8;">Your library is empty. Start adding books 📚</p>`;

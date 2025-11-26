@@ -53,6 +53,7 @@ function pickMotivationQuotes(userData) {
     pool = ["Stay focused. Your best self is waiting."];
   }
 
+  // Pick random quote
   const randomQuote = pool[Math.floor(Math.random() * pool.length)];
   quoteBox.textContent = randomQuote;
 }
@@ -66,7 +67,7 @@ const scheduleSection = document.querySelector('.schedule');
 const quote = document.querySelector('.quote');
 const timerEl = document.querySelector('.timer');
 const focusModeNav = document.querySelector('.focusModeNav');
-
+//schedule section variables
 const schedulerHeader = document.querySelector('.schedule-header')
 const modal = document.getElementById("newSessionModal");
 const saveBtn = document.getElementById("saveSession");
@@ -85,9 +86,12 @@ function formatTime(totalMinutes) {
 export function renderQuoteSelections(userData) {
   const quotes = document.querySelectorAll('.quotes-list p');
   const currentSet = new Set(userData.motivations || []);
+
+  // Apply UI state
   quotes.forEach(q => {
     q.classList.toggle('pickedQuotes', currentSet.has(q.id));
 
+    // Ensure only ONE listener per element
     q.onclick = async (e) => {
       e.preventDefault();
       const user = auth.currentUser;
@@ -95,22 +99,28 @@ export function renderQuoteSelections(userData) {
 
       const userRef = doc(db, "users", user.uid);
 
+      // Fetch the freshest data before updating
       const snap = await getDoc(userRef);
       if (!snap.exists()) return;
       const latest = snap.data();
       const latestSet = new Set(latest.motivations || []);
 
       if (latestSet.has(q.id)) {
+        // Trying to unselect
         if (latestSet.size <= 1) {
           alert("Please keep at least one motivation selected.");
           return;
         }
         latestSet.delete(q.id);
       } else {
+        // Selecting
         latestSet.add(q.id);
       }
+
+      // Update UI immediately
       q.classList.toggle('pickedQuotes', latestSet.has(q.id));
 
+      // Save back to Firestore (deduped)
       await updateDoc(userRef, { motivations: Array.from(latestSet) });
     };
   });
@@ -212,6 +222,7 @@ async function beginTimer(hasStartedOnce, userData, thisUser) {
       clearInterval(timerInterval);
       startBtn.textContent = "Start";
       hasStartedOnce = false; 
+      console.log("Focus mode disabled.");
       resetTimer(userData)
       showSessionComplete(userData,thisUser,hasStartedOnce, 70);
       
@@ -337,10 +348,10 @@ async function showSessionComplete(userData, thisUser, hasStartedOnce, gainedXP 
     } else {
       totalMinutes = Math.floor(((h || 0) * 3600 + m * 60 + s) / 60);
     }
-
+    console.log(totalMinutes)
     const newXP = (userData.progress?.xp || 0) + gainedXP;
     if(userData.achievements.daily.sessionComplete==='claimed') {
-
+      console.log('it was claimed')
       updateDoc(userRef, {
       "progress.xp": newXP,
       "progress.focusSessions": (userData.progress?.focusSessions || 0) + totalMinutes,
@@ -353,7 +364,7 @@ async function showSessionComplete(userData, thisUser, hasStartedOnce, gainedXP 
       "achievements.daily.sessionComplete": true,
       "achievements.weekly.focusTime": (userData.achievements?.weekly?.focusTime || 0) + totalMinutes
     }).then(() => {
-      //console.log(`Session complete: +${gainedXP}xp, +${totalMinutes}min focus time`);
+      console.log(`Session complete: +${gainedXP}xp, +${totalMinutes}min focus time`);
     });
     await checkLevelUp(userRef, userData);
     }
@@ -486,7 +497,7 @@ export function setupNewSessionModal(thisUser, userData) {
   openBtn._latestUserData = userData;
   window.__booksyLatestUserData = userData;
   openBtn.dataset.booksyOpenAttached = "true";
-  openBtn.addEventListener("click", () => {
+    openBtn.addEventListener("click", () => {
       const latest = openBtn._latestUserData || window.__booksyLatestUserData || userData;
 
         modal.style.zIndex = "3";
@@ -498,8 +509,8 @@ export function setupNewSessionModal(thisUser, userData) {
       });
   if (!openBtn.dataset.booksyOpenAttached) {
     if (!modal.dataset.editing) {
-    initScheduler(thisUser, latest, { resetForm: true });
-  }
+          initScheduler(thisUser, latest, { resetForm: true });
+        }
 
   }
 
@@ -1019,13 +1030,13 @@ confirmDurationBtn.addEventListener('click', () => {
       );
     });
   });
+  console.log(saveSessionBtn.data.booksySaveAttached)
   if (!saveSessionBtn.dataset.booksySaveAttached) {
-    
-
+    saveSessionBtn.dataset.booksySaveAttached = "true";
+    console.log('saving session')
     saveSessionBtn.addEventListener("click", async () => {
       if (modal.dataset.editing) return;
-      saveSessionBtn.dataset.booksySaveAttached = "true";
-
+       console.log('saving session 2')
       const uid =
         (thisUser && thisUser.uid) || (auth.currentUser && auth.currentUser.uid);
       if (!uid) {
@@ -1060,8 +1071,11 @@ confirmDurationBtn.addEventListener('click', () => {
 
         console.log("New session created:", sessionId);
 
-        // close modal
-        if (closeModalBtn) closeModalBtn.click();
+        const modal = document.getElementById('newSessionModal');
+    if (modal) {
+      modal.style.opacity = '0';
+      modal.style.zIndex = '-1';
+    }
       } catch (err) {
         console.error("Error saving session:", err);
         alert("Failed to save session. Check console.");
