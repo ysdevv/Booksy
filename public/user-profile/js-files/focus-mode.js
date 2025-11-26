@@ -503,15 +503,19 @@ export function setupNewSessionModal(thisUser, userData) {
 
   }
 
-
+  // Attach close listener only once
+  if (!closeBtn.dataset.booksyCloseAttached) {
+    closeBtn.dataset.booksyCloseAttached = "true";
     closeBtn.addEventListener("click", () => {
       modal.style.opacity = "0";
       modal.style.zIndex = "0";
       sessionsList.style.zIndex = "3";
     });
-  
+  }
 
-
+  // Attach outside-click listener only once
+  if (!window.__booksyModalOutsideAttached) {
+    window.__booksyModalOutsideAttached = true;
     window.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.style.opacity = "0";
@@ -519,7 +523,7 @@ export function setupNewSessionModal(thisUser, userData) {
         sessionsList.style.zIndex = "3";
       }
     });
-  
+  }
 }
 
 export function attachMenuActions(card, sessId) {
