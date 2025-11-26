@@ -1064,7 +1064,7 @@ seeAllBooksBtn.addEventListener('click', ()=>{
 
 export function renderLibBooks(books, userRef, uData, thisUser) {
 
-  let activeFilter = "all";
+  let activeFilter = document.getElementById('set');
           showLib.querySelectorAll(".year-section").forEach(el => el.remove());
           const emptySection = document.querySelector('.empty-section');
           if(emptySection) showLib.removeChild(emptySection);
@@ -1072,11 +1072,11 @@ export function renderLibBooks(books, userRef, uData, thisUser) {
           if (!books.length) {
             const emptyDiv = document.createElement("div");
             emptyDiv.classList.add("empty-section");
-            if (activeFilter === "all") {
+            if (activeFilter.className==="all") {
               emptyDiv.innerHTML = `<p style="opacity:.8;">Your library is empty. Start adding books 📚</p>`;
-            } else if (activeFilter === "inProgress") {
+            } else if (activeFilter.className === "inProgress") {
               emptyDiv.innerHTML = `<p style="opacity:.8;">You haven’t started reading anything yet.<br> Pick a book to begin 📖</p>`;
-            } else if (activeFilter === "finished") {
+            } else if (activeFilter.className === "finished") {
               emptyDiv.innerHTML = `<p style="opacity:.8;">You haven’t finished a book yet.<br> Keep going 💪</p>`;
             }
 
