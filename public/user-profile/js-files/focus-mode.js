@@ -1020,10 +1020,11 @@ confirmDurationBtn.addEventListener('click', () => {
     });
   });
   if (!saveSessionBtn.dataset.booksySaveAttached) {
-    saveSessionBtn.dataset.booksySaveAttached = "true";
+    
 
     saveSessionBtn.addEventListener("click", async () => {
       if (modal.dataset.editing) return;
+      saveSessionBtn.dataset.booksySaveAttached = "true";
 
       const uid =
         (thisUser && thisUser.uid) || (auth.currentUser && auth.currentUser.uid);
