@@ -461,6 +461,7 @@
   z-index: -10;
   width: inherit;
   height: max-content;
+  overflow-x: hidden;
   opacity: 0;
   transition: opacity 1s ease;
   color: white;

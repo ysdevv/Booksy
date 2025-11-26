@@ -84,6 +84,7 @@ input:focus {
 .nav-bar {
   display: none;
   position: fixed;
+  overflow-y: scroll;
   z-index: 3;
   opacity: 0;
   top: 0;
