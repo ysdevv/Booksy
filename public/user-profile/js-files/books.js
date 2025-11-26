@@ -759,13 +759,7 @@ async function showAboutBook(book) {
           }
         }
         
-        aboutBookSection.style.display = "block";
-        smallerNavBar();
-        mainDisplay.style.boxShadow = '2px 2px 30px rgba(0, 0, 0, 0.152)';
-        mainDisplay.style.gap = '8px';
-        setTimeout(() => {
-            aboutBookSection.style.opacity = "1";
-        }, 100);
+        
         
       } catch (err) {
         console.error("Failed to fetch book details:", err);
@@ -848,7 +842,13 @@ function createBookCard(book, userData) {
     </div>
   `;
   
-  bookEl.querySelector(".aboutBook").addEventListener("click", showAboutBook(book));
+  bookEl.querySelector(".aboutBook").addEventListener("click", ()=>{showAboutBook(book); aboutBookSection.style.display = "block";
+        smallerNavBar();
+        mainDisplay.style.boxShadow = '2px 2px 30px rgba(0, 0, 0, 0.152)';
+        mainDisplay.style.gap = '8px';
+        setTimeout(() => {
+            aboutBookSection.style.opacity = "1";
+        }, 100);});
 
   bookEl.querySelector(".readBook").addEventListener("click", () => {
     loadBookIntoReader({ title: book.title, author: book.author, cover: book.cover});
@@ -892,6 +892,13 @@ function createWishlistCard(book, userData) {
   `;
 
   bookEl.querySelector(".aboutBook").addEventListener("click", async () => {
+    aboutBookSection.style.display = "block";
+        smallerNavBar();
+        mainDisplay.style.boxShadow = '2px 2px 30px rgba(0, 0, 0, 0.152)';
+        mainDisplay.style.gap = '8px';
+        setTimeout(() => {
+            aboutBookSection.style.opacity = "1";
+        }, 100);
     showAboutBook(book);
   });
 
